@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" style="text-align: center">
+      <h2>Registro de Personas</h2>
+      <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+        <mat-form-field class="example-full-width" *ngIf="edicion">
+          <mat-label>ID</mat-label>
+          <input matInput placeholder="ID" formControlName="idUser" />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Nombre" formControlName="name" />
+          <mat-error
+            *ngIf="obtenerControlCampo('name')?.errors?.['required']"
+          >
+            El nombre es obligatorio.
+          </mat-error>
+        </mat-form-field>
+
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            placeholder="Email"
+            formControlName="email"
+          />
+          <mat-error
+            *ngIf="obtenerControlCampo('email')?.errors?.['required']"
+          >
+            El email es obligatorio.
+          </mat-error>
+        </mat-form-field>
+
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Contraseña</mat-label>
+          <input matInput placeholder="Contraseña" formControlName="password" />
+          <mat-error
+            *ngIf="obtenerControlCampo('password')?.errors?.['required']"
+          >
+            La contraseña es obligatorio.
+          </mat-error>
+        </mat-form-field>
+
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Telefono</mat-label>
+          <input matInput placeholder="Telefono" formControlName="phone_num" />
+          <mat-error
+            *ngIf="obtenerControlCampo('phone_num')?.errors?.['required']"
+          >
+            El telefono es obligatorio.
+          </mat-error>
+        </mat-form-field>
+
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>DNI</mat-label>
+          <input matInput placeholder="DNI" formControlName="dni" />
+          <mat-error
+            *ngIf="obtenerControlCampo('dni')?.errors?.['required']"
+          >
+            El DNI es obligatorio.
+          </mat-error>
+        </mat-form-field>
+
+        <br />
+        <mat-form-field appearance="fill" class="example-full-width">
+          <input
+            matInput
+            placeholder="Fecha de nacimiento"
+            [matDatepicker]="picker"
+            formControlName="birthDay"
+            [max]="maxFecha"
+          />
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle
+            matIconSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error
+            *ngIf="obtenerControlCampo('birthDay')?.errors?.['required']"
+          >
+           La fecha  es obligatorio.
+          </mat-error>
+        </mat-form-field>
+
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Username" formControlName="username" />
+          <mat-error
+            *ngIf="obtenerControlCampo('username')?.errors?.['required']"
+          >
+            El DNI es obligatorio.
+          </mat-error>
+        </mat-form-field>
+
+        <br />
+        <mat-form-field class="example-full-width" readonly>
+            <mat-label >Rol</mat-label>
+            <input matInput required placeholder="rol" formControlName="rol" readonly>
+          </mat-form-field>
+
+
+        <br />
+        <button mat-raised-button color="primary">Aceptar</button>
+        <button mat-raised-button color="warn" routerLink="/users">
+          Cancelar
+        </button>
+        <p>{{ mensaje }}</p>
+      </form>
+    </div>
+  </body>
+</html>
+
+

@@ -42,4 +42,13 @@ export class CategoryService {
     //nos informa de todo lo nuevo que hay
     // a pesar de no estar conectados
   }
+  listId(id: number) {
+    return this.http.get<Category>(`${this.url}/${id}`);
+  }
+  update(c:Category) { 
+    return this.http.put(this.url, c);
+  }
+  delete(id: number) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
 }
