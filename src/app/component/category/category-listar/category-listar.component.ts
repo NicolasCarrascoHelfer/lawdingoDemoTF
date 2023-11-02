@@ -9,7 +9,7 @@ import { MatPaginator } from '@angular/material/paginator';
   templateUrl: './category-listar.component.html',
   styleUrls: ['./category-listar.component.css']
 })
-export class CategoryListarComponent {
+export class CategoryListarComponent implements OnInit{
   dataSource: MatTableDataSource<Category> = new MatTableDataSource();
   displayedColumns: string[] = [
     'codigo',
@@ -40,5 +40,8 @@ export class CategoryListarComponent {
         this.cS.setList(data);
       });
     });
+  }
+  filter(en: any) {
+    this.dataSource.filter = en.target.value.trim();
   }
 }
