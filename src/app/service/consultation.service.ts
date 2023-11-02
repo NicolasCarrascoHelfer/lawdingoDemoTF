@@ -1,40 +1,36 @@
 import { Injectable } from '@angular/core';
-import { enviroment } from 'src/enviroments/enviroment';
 
+import { enviroment } from 'src/enviroments/enviroment';
 //se agrega los imports para actualizar la variables
 import { Subject } from 'rxjs';
-import { Category } from '../model/category';
+import { Consultation } from '../model/consultation';
 import { HttpClient } from '@angular/common/http';
 
 //declaracion de una constante
 const base_url = enviroment.base;
-
 @Injectable({
   providedIn: 'root'
 })
-export class CategoryService {
+export class ConsultationService {
 
-  //declaracion de varibales privadas
-
-  //acceso al controlador
-  private url = `${base_url}/categories`;
-  private listaCambio = new Subject<Category[]>(); //trae la data de manera odenada
+  private url = `${base_url}/consultations`;
+  private listaCambio = new Subject<Consultation[]>(); //trae la data de manera odenada
 
   constructor(private http: HttpClient) {}
 
   //metodos
   //listar
   list() {
-    return this.http.get<Category[]>(this.url); //METODO GET (HTTTP)
+    return this.http.get<Consultation[]>(this.url); //METODO GET (HTTTP)
   }
   //insertar
-  insert(c: Category) {
+  insert(c: Consultation) {
     //alienado al backend
     return this.http.post(this.url, c); //METODO PSOT(HTTP)
   }
 
   //llenar variable lista cambio
-  setList(listaNueva: Category[]) {
+  setList(listaNueva: Consultation[]) {
     this.listaCambio.next(listaNueva);
   }
   getList() {
@@ -43,9 +39,9 @@ export class CategoryService {
     // a pesar de no estar conectados
   }
   listId(id: number) {
-    return this.http.get<Category>(`${this.url}/${id}`);
+    return this.http.get<Consultation>(`${this.url}/${id}`);
   }
-  update(c:Category) { 
+  update(c:Consultation) { 
     return this.http.put(this.url, c);
   }
   delete(id: number) {
