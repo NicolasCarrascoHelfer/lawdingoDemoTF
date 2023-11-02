@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-role',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./role.component.css']
 })
 export class RoleComponent {
+  constructor(public route:ActivatedRoute){
 
+  }
 }

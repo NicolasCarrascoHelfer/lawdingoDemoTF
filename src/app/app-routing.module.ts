@@ -38,7 +38,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'consultation',
+    path: 'consultations',
     component: ConsultationComponent,
     children: [
       { path: 'nuevo', component: ConsultationCreaeditaComponent },

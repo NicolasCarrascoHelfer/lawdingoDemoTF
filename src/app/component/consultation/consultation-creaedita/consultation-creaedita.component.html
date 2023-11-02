@@ -1,1 +1,114 @@
-<p>consultation-creaedita works!</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" style="text-align: center">
+      <h2>Registro de Consulta</h2>
+      <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+        <mat-form-field class="example-full-width" *ngIf="edicion">
+          <mat-label>idConsultation</mat-label>
+          <input matInput placeholder="ID" formControlName="idConsultation" />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label> Asunto </mat-label>
+          <input matInput placeholder="Asunto" formControlName="title" />
+          <mat-error
+            *ngIf="obtenerControlCampo('title')?.errors?.['required']"
+          >
+            El asunto es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        
+        <br />
+        <mat-form-field appearance="fill" class="example-full-width">
+            <input
+              matInput
+              placeholder="Ingrese fecha de consulta"
+              [matDatepicker]="pickerStart"
+              formControlName="date"
+            />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="pickerStart"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #pickerStart></mat-datepicker>
+            <mat-error
+              *ngIf="obtenerControlCampo('date')?.errors?.['required']"
+            >
+              La fecha de consulta es obligatoria.
+            </mat-error>
+          </mat-form-field>
+
+          <br />
+        <mat-form-field class="example-full-width">
+            <mat-label> Descripcion </mat-label>
+            <input matInput placeholder="Ingrese la descripcion" formControlName="description" />
+            <mat-error
+              *ngIf="obtenerControlCampo('description')?.errors?.['required']"
+            >
+              La descripcion es obligatorio.
+            </mat-error>
+          </mat-form-field>
+
+          <br>
+          <mat-form-field class="example-full-width">
+            <mat-label>Cliente</mat-label>
+            <mat-select 
+            [(value)]="idUsuarioSeleccionado"
+            formControlName="cliente">
+              <mat-option *ngFor="let u of listaClientes" [value]="u.idUser">
+                {{u.name}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="obtenerControlCampo('cliente')?.errors?.['required']">
+              Su nombre es obligatorio.
+            </mat-error>
+          </mat-form-field>
+
+          <br>
+          <mat-form-field class="example-full-width">
+            <mat-label>Abogado</mat-label>
+            <mat-select 
+            [(value)]="idCategoriaSeleccionada"
+            formControlName="abogado">
+              <mat-option *ngFor="let us of listaAbogados" [value]="us.idUser">
+                {{us.lawyer?us.name:null}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="obtenerControlCampo('abogado')?.errors?.['required']">
+              El nombre del abogado es obligatorio.
+            </mat-error>
+          </mat-form-field>
+
+          <br>
+          <mat-form-field class="example-full-width">
+            <mat-label>Categoria</mat-label>
+            <mat-select 
+            [(value)]="idCategoriaSeleccionada"
+            formControlName="categoria">
+              <mat-option *ngFor="let c of listaCategorias" [value]="c.idCategory">
+                {{c.name}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="obtenerControlCampo('categoria')?.errors?.['required']">
+              La categoria es obligatorio.
+            </mat-error>
+          </mat-form-field>
+
+       
+        <br />
+        <button mat-raised-button color="primary">Aceptar</button>
+        <button mat-raised-button color="warn" routerLink="/consultations">
+          Cancelar
+        </button>
+        <p>{{ mensaje }}</p>
+      </form>
+    </div>
+  </body>
+</html>

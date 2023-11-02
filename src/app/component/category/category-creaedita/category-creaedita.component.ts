@@ -33,6 +33,7 @@ export class CategoryCreaeditaComponent implements OnInit {
       this.id = data['id'];
       this.edicion = data['id'] != null;
       this.init();
+      
     });
     this.form = this.formBuilder.group({
       idCategory: ['',],
