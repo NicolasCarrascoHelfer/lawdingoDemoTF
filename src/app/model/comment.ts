@@ -1,6 +1,6 @@
 import { Users } from "./users"
 
-export class Role{
+export class Comment{
     idComment:number =0
     client: Users = new Users()
     lawyer: Users = new Users()

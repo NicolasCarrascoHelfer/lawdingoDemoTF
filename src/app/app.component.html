@@ -3,6 +3,7 @@
     <button mat-button [matMenuTriggerFor]="menuPersona">Usuario</button>
     <button mat-button [matMenuTriggerFor]="menuA">Categoria</button>
     <button mat-button [matMenuTriggerFor]="menuDistrito">Distrito</button>
+    <button mat-button [matMenuTriggerFor]="menuC">Consultas</button>
   </mat-toolbar>
   
   <mat-menu #menuPersona="matMenu">
@@ -23,6 +24,11 @@
 
   </mat-menu>
   
+  <mat-menu #menuC="matMenu">
+    <button mat-menu-item routerLink="/consultations/nuevo">Registrar </button>
+    <button mat-menu-item routerLink="/consultations">Listar </button>
+    <!-- Agrega más elementos de menú si es necesario -->
+  </mat-menu>
 
   
 <router-outlet></router-outlet>

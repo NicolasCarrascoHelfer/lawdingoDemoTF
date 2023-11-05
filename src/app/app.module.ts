@@ -38,6 +38,9 @@ import { ProceedingListarComponent } from './component/proceeding/proceeding-lis
 import { DistrictComponent } from './component/district/district.component';
 import { DistrictListarComponent } from './component/district/district-listar/district-listar.component';
 import { DistrictCreaeditaComponent } from './component/district/district-creaedita/district-creaedita.component';
+import { ConsultationComponent } from './component/consultation/consultation.component';
+import { ConsultationCreaeditaComponent } from './component/consultation/consultation-creaedita/consultation-creaedita.component';
+import { ConsultationListarComponent } from './component/consultation/consultation-listar/consultation-listar.component';
 
 
 
@@ -63,6 +66,9 @@ import { DistrictCreaeditaComponent } from './component/district/district-creaed
     DistrictComponent,
     DistrictListarComponent,
     DistrictCreaeditaComponent,
+    ConsultationComponent,
+    ConsultationCreaeditaComponent,
+    ConsultationListarComponent,
     
   ],
   imports: [

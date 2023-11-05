@@ -1,20 +1,23 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
-import { Category } from 'src/app/model/category';
-import { CategoryService } from 'src/app/service/category.service';
+import { Consultation } from 'src/app/model/consultation';
+import { ConsultationService } from 'src/app/service/consultation.service';
 import { MatPaginator } from '@angular/material/paginator';
-
 @Component({
-  selector: 'app-category-listar',
-  templateUrl: './category-listar.component.html',
-  styleUrls: ['./category-listar.component.css']
+  selector: 'app-consultation-listar',
+  templateUrl: './consultation-listar.component.html',
+  styleUrls: ['./consultation-listar.component.css']
 })
-export class CategoryListarComponent implements OnInit{
-  dataSource: MatTableDataSource<Category> = new MatTableDataSource();
+export class ConsultationListarComponent implements OnInit{
+  dataSource: MatTableDataSource<Consultation> = new MatTableDataSource();
   displayedColumns: string[] = [
     'codigo',
+    'titulo',
+    'fecha',
+    'descripcion',
+    'cliente',
+    'abogado',
     'categoria',
-
     'accion01',
     'accion02',
     
@@ -22,7 +25,7 @@ export class CategoryListarComponent implements OnInit{
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private cS: CategoryService) {
+  constructor(private cS: ConsultationService) {
   }
   ngOnInit(): void {
     this.cS.list().subscribe((data) => {

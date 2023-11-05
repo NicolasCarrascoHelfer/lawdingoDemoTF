@@ -8,11 +8,13 @@
 <body>
   <div class="container">
     <br />
-    <h2 style="text-align: center">Lista de clubes</h2>
+    <h2 style="text-align: center">Lista de Categorias</h2>
     <div style="text-align: right;">
       <button mat-raised-button color="primary" routerLink="/categories/nuevo">Nuevo</button>
     </div>
-
+    <mat-form-field>
+      <input matInput (keyup)=filter($event) placeholder="buscar"/>
+    </mat-form-field>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
             <!-- Codigo/ID Column -->
