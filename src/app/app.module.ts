@@ -32,6 +32,12 @@ import { CommentListarComponent } from './component/comment/comment-listar/comme
 import { UsersComponent } from './component/users/users.component';
 import { UsersCreaeditaComponent } from './component/users/users-creaedita/users-creaedita.component';
 import { UsersListarComponent } from './component/users/users-listar/users-listar.component';
+import { ProceedingComponent } from './component/proceeding/proceeding.component';
+import { ProceedingCreaeditaComponent } from './component/proceeding/proceeding-creaedita/proceeding-creaedita.component';
+import { ProceedingListarComponent } from './component/proceeding/proceeding-listar/proceeding-listar.component';
+import { DistrictComponent } from './component/district/district.component';
+import { DistrictListarComponent } from './component/district/district-listar/district-listar.component';
+import { DistrictCreaeditaComponent } from './component/district/district-creaedita/district-creaedita.component';
 import { ConsultationComponent } from './component/consultation/consultation.component';
 import { ConsultationCreaeditaComponent } from './component/consultation/consultation-creaedita/consultation-creaedita.component';
 import { ConsultationListarComponent } from './component/consultation/consultation-listar/consultation-listar.component';
@@ -54,6 +60,12 @@ import { ConsultationListarComponent } from './component/consultation/consultati
     UsersComponent,
     UsersCreaeditaComponent,
     UsersListarComponent,
+    ProceedingComponent,
+    ProceedingCreaeditaComponent,
+    ProceedingListarComponent,
+    DistrictComponent,
+    DistrictListarComponent,
+    DistrictCreaeditaComponent,
     ConsultationComponent,
     ConsultationCreaeditaComponent,
     ConsultationListarComponent,

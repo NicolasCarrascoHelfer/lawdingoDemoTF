@@ -4,10 +4,13 @@ import { UsersComponent } from './component/users/users.component';
 import { UsersCreaeditaComponent } from './component/users/users-creaedita/users-creaedita.component';
 import { CategoryComponent } from './component/category/category.component';
 import { CategoryCreaeditaComponent } from './component/category/category-creaedita/category-creaedita.component';
+import { DistrictComponent } from './component/district/district.component';
+import { DistrictCreaeditaComponent } from './component/district/district-creaedita/district-creaedita.component';
 import { RoleComponent } from './component/role/role.component';
 import { RoleCreaeditaComponent } from './component/role/role-creaedita/role-creaedita.component';
 import { ConsultationComponent } from './component/consultation/consultation.component';
 import { ConsultationCreaeditaComponent } from './component/consultation/consultation-creaedita/consultation-creaedita.component';
+
 
 const routes: Routes = [
   {
@@ -29,6 +32,15 @@ const routes: Routes = [
     ],
   },
   {
+    path: 'districts',
+    component: DistrictComponent,
+    children: [
+      { path: 'nuevo', component: DistrictCreaeditaComponent },
+      { path: 'ediciones/:id', component: DistrictCreaeditaComponent },
+      
+      ],
+  },
+  {
     path: 'role',
     component: RoleComponent,
     children: [
@@ -43,6 +55,9 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: ConsultationCreaeditaComponent },
       { path: 'ediciones/:id', component: ConsultationCreaeditaComponent },
+      
+      
+
 
     ],
   },
