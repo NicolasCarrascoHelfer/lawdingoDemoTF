@@ -12,7 +12,6 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 })
 export class DistrictListarComponent implements OnInit{
   dataSource: MatTableDataSource<District> = new MatTableDataSource();
-  idForm: FormGroup = new FormGroup({});
   mensaje: string = '';
   idVacio: boolean = false;
   displayedColumns: string[] = [
@@ -37,9 +36,6 @@ export class DistrictListarComponent implements OnInit{
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
     });
-    this.idForm = this.formBuilder.group({
-      id: [,],
-    });
   }
   eliminar(id: number) {
     this.dS.delete(id).subscribe((data) => {
@@ -48,10 +44,7 @@ export class DistrictListarComponent implements OnInit{
       });
     });
   }
-  buscar() {
-      const ids = this.idForm.value.id
-      this.dS.listId(ids).subscribe((data) => {
-        this.dataSource.data = data;
-      });
-}
+  filter(en: any) {
+    this.dataSource.filter = en.target.value.trim();
+  }
 }

@@ -10,6 +10,8 @@ import { RoleComponent } from './component/role/role.component';
 import { RoleCreaeditaComponent } from './component/role/role-creaedita/role-creaedita.component';
 import { ConsultationComponent } from './component/consultation/consultation.component';
 import { ConsultationCreaeditaComponent } from './component/consultation/consultation-creaedita/consultation-creaedita.component';
+import { DocumentationComponent } from './component/documentation/documentation.component';
+import { CreaeditaDocumentationComponent } from './component/documentation/creaedita-documentation/creaedita-documentation.component';
 
 
 const routes: Routes = [
@@ -55,9 +57,14 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: ConsultationCreaeditaComponent },
       { path: 'ediciones/:id', component: ConsultationCreaeditaComponent },
-      
-      
-
+    ],
+  },
+  {
+    path: 'documentations',
+    component: DocumentationComponent,
+    children: [
+      { path: 'nuevo', component: CreaeditaDocumentationComponent },
+      { path: 'ediciones/:id', component: CreaeditaDocumentationComponent },
 
     ],
   },

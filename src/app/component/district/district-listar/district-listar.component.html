@@ -12,17 +12,9 @@
     <div style="text-align: right;">
       <button mat-raised-button color="primary" routerLink="/districts/nuevo">Nuevo</button>
     </div>
-    <div [formGroup]="idForm" class="container">
-        <mat-form-field>
-          <input
-            matInput
-            placeholder="Ingrese un Id"
-            formControlName="id"
-          />
-        
-        </mat-form-field>
-        <button (click)="buscar()" mat-raised-button color="warn">Buscar</button>
-      </div>
+    <mat-form-field>
+      <input matInput (keyup)=filter($event) placeholder="buscar"/>
+    </mat-form-field>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
             <!-- Codigo/ID Column -->
