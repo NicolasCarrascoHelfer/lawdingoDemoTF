@@ -41,6 +41,9 @@ import { DistrictCreaeditaComponent } from './component/district/district-creaed
 import { ConsultationComponent } from './component/consultation/consultation.component';
 import { ConsultationCreaeditaComponent } from './component/consultation/consultation-creaedita/consultation-creaedita.component';
 import { ConsultationListarComponent } from './component/consultation/consultation-listar/consultation-listar.component';
+import { DocumentationComponent } from './component/documentation/documentation.component';
+import { ListarDocumentationComponent } from './component/documentation/listar-documentation/listar-documentation.component';
+import { CreaeditaDocumentationComponent } from './component/documentation/creaedita-documentation/creaedita-documentation.component';
 
 
 
@@ -69,6 +72,9 @@ import { ConsultationListarComponent } from './component/consultation/consultati
     ConsultationComponent,
     ConsultationCreaeditaComponent,
     ConsultationListarComponent,
+    DocumentationComponent,
+    ListarDocumentationComponent,
+    CreaeditaDocumentationComponent,
     
   ],
   imports: [
