@@ -28,7 +28,7 @@ export class CreaeditaDocumentationComponent implements OnInit{
       
     });
     this.form = this.formBuilder.group({
-      idDocumentation: ['',],
+      idDocumentation: [''],
       name: ['', Validators.required],
       proceeding: ['', Validators.required],
     });
