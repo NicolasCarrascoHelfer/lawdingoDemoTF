@@ -19,7 +19,7 @@ export class UsersService {
     return this.http.get<Users[]>(this.url);
   }
   insert(p:Users){
-    return this.http.post(this.url,p);
+    return this.http.post(`${this.url}/save`,p);
   }
   setList(listaNueva: Users[]) {
     this.listaCambio.next(listaNueva);

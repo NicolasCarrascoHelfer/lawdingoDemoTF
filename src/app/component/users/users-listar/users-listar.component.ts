@@ -16,9 +16,10 @@ export class UsersListarComponent implements OnInit {
     'username',
     'name',
     'email',
+    'password',
     'phone_num',
     'dni',
-    'rol',
+    'birthDay',
     'enabled',
     'lawyer',
     'accion01',
@@ -44,6 +45,8 @@ export class UsersListarComponent implements OnInit {
       });
     });
   }
+
+
   filter(en: any) {
     this.dataSource.filter = en.target.value.trim();
   }
