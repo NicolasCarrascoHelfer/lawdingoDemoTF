@@ -11,6 +11,8 @@
   <button mat-button [matMenuTriggerFor]="menuExpediente">Expediente</button>
   <button mat-button [matMenuTriggerFor]="menuJuzgados">Juzgados</button>
   <button mat-button [matMenuTriggerFor]="menuComentarios">Comentarios</button>
+  <button mat-button [matMenuTriggerFor]="menuCertificacion">Certificacion</button>
+
 </mat-toolbar>
 
 <mat-menu #menuUsuario="matMenu">
@@ -60,6 +62,12 @@
 <mat-menu #menuComentarios="matMenu">
   <button mat-menu-item routerLink="/comments/nuevo">Registrar</button>
   <button mat-menu-item routerLink="/comments">Listar</button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+
+<mat-menu #menuCertificacion="matMenu">
+  <button mat-menu-item routerLink="/certification/nuevo">Registrar</button>
+  <button mat-menu-item routerLink="/certification">Listar</button>
   <!-- Agrega más elementos de menú si es necesario -->
 </mat-menu>
 

@@ -18,6 +18,8 @@ import { CourtComponent } from './component/court/court.component';
 import { CourtCreaeditaComponent } from './component/court/court-creaedita/court-creaedita.component';
 import { CommentComponent } from './component/comment/comment.component';
 import { CommentCreaeditaComponent } from './component/comment/comment-creaedita/comment-creaedita.component';
+import { CertificationComponent } from './component/certification/certification.component';
+import { CertificationCreaeditaComponent } from './component/certification/certification-creaedita/certification-creaedita.component';
 
 
 const routes: Routes = [
@@ -92,6 +94,14 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CommentCreaeditaComponent },
       { path: 'ediciones/:id', component: CommentCreaeditaComponent },
+    ],
+  },
+  {
+    path: 'certification',
+    component: CertificationComponent,
+    children: [
+      { path: 'nuevo', component: CertificationCreaeditaComponent },
+      { path: 'ediciones/:id', component: CertificationCreaeditaComponent },
     ],
   },
 ];
