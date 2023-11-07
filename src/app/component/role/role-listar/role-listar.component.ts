@@ -13,11 +13,9 @@ export class RoleListarComponent implements OnInit{
   displayedColumns: string[] = [
     'codigo',
     'rol',
-    'user',
-
+    'usuario',
     'accion01',
-    'accion02',
-    
+
   ];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -34,13 +32,7 @@ export class RoleListarComponent implements OnInit{
       this.dataSource.paginator = this.paginator;
     });
   }
-  eliminar(id: number) {
-    this.rS.delete(id).subscribe((data) => {
-      this.rS.list().subscribe((data) => {
-        this.rS.setList(data);
-      });
-    });
-  }
+
   filter(en: any) {
     this.dataSource.filter = en.target.value.trim();
   }
