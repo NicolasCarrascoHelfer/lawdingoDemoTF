@@ -121,9 +121,9 @@ export class ProceedingCreaeditaComponent implements OnInit {
           idProceeding: new FormControl(data.idProceeding),
           name: new FormControl(data.name),
           state: new FormControl(data.state),
-          court: new FormControl(data.court.name),
-          client: new FormControl(data.client.name),
-          lawyer: new FormControl(data.lawyer.name),
+          court: new FormControl(data.court.idCourt),
+          client: new FormControl(data.client.idUser),
+          lawyer: new FormControl(data.lawyer.idUser),
         });
       });
     }

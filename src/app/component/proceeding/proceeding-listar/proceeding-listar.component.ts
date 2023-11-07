@@ -13,7 +13,7 @@ export class ProceedingListarComponent implements OnInit {
   dataSource: MatTableDataSource<Proceeding> = new MatTableDataSource();
   displayedColumns: string[] = [
     'codigo',
-    'expediente',
+    'nombre',
     'estado',
     'juzgado',
     'cliente',
