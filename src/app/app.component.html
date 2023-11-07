@@ -8,6 +8,7 @@
     Documentación
   </button>
   <button mat-button [matMenuTriggerFor]="menuExpediente">Expediente</button>
+  <button mat-button [matMenuTriggerFor]="menuJuzgados">Juzgados</button>
 </mat-toolbar>
 
 <mat-menu #menuUsuario="matMenu">
@@ -41,6 +42,13 @@
 <mat-menu #menuExpediente="matMenu">
   <button mat-menu-item routerLink="/proceedings/nuevo">Registrar</button>
   <button mat-menu-item routerLink="/proceedings">Listar</button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+
+<router-outlet></router-outlet>
+<mat-menu #menuJuzgados="matMenu">
+  <button mat-menu-item routerLink="/courts/nuevo">Registrar</button>
+  <button mat-menu-item routerLink="/courts">Listar</button>
   <!-- Agrega más elementos de menú si es necesario -->
 </mat-menu>
 
