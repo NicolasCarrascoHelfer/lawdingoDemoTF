@@ -1,74 +1,121 @@
-<mat-toolbar color="primary">
-  <mat-icon>menu</mat-icon>
-  <button mat-button [matMenuTriggerFor]="menuUsuario">Usuario</button>
-  <button mat-button [matMenuTriggerFor]="menuRol">Rol</button>
-  <button mat-button [matMenuTriggerFor]="menuCategoria">Categoria</button>
-  <button mat-button [matMenuTriggerFor]="menuDistrito">Distrito</button>
-  <button mat-button [matMenuTriggerFor]="menuConsultas">Consultas</button>
-  <button mat-button [matMenuTriggerFor]="menuDocumentacion">
-    Documentación
-  </button>
-  <button mat-button [matMenuTriggerFor]="menuExpediente">Expediente</button>
-  <button mat-button [matMenuTriggerFor]="menuJuzgados">Juzgados</button>
-  <button mat-button [matMenuTriggerFor]="menuComentarios">Comentarios</button>
-  <button mat-button [matMenuTriggerFor]="menuCertificacion">Certificacion</button>
+<mat-toolbar class="head" >
+  <button (click)="drawer.toggle()" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+</button>
+<span>Lawdingo</span>
+<span class="example-spacer"></span>
 
+<nav class="navegation">
+  <ul class="nav_menu">
+    <a href="#home">Home</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#info">Nosotros</a>
+    <a href="#planes"> Nuestros planes</a>
+    <a href="#contacto">Contacto</a>
+    
+    <a class="btn" href="#registrar" mat-raised-button >Registrate</a>
+    <a href="#cerrar" >Cerrar Sesion </a>
+  </ul>
+</nav>
+
+  
 </mat-toolbar>
+<mat-drawer-container >
+  <mat-drawer class="nav"  #drawer opened="true" mode="side" position="start" >
+  <mat-nav-list >
+    <mat-list-item class="col1">
+      <button class="col1"  mat-button [matMenuTriggerFor]="menuUsuario">Usuario</button>
+    <mat-menu #menuUsuario="matMenu">
+      <button mat-menu-item routerLink="/users/nuevo">Registrar</button>
+      <button mat-menu-item routerLink="/users">Listar</button>
+    </mat-menu>
+  </mat-list-item>
 
-<mat-menu #menuUsuario="matMenu">
-  <button mat-menu-item routerLink="/users/nuevo">Registrar</button>
-  <button mat-menu-item routerLink="/users">Listar</button>
-</mat-menu>
+  <mat-list-item>
+    <button class="col1" mat-button [matMenuTriggerFor]="menuRol"><mat-icon>dashboard</mat-icon>Rol</button>
+    
+    <mat-menu #menuRol="matMenu">
+      <button mat-menu-item routerLink="/roles/nuevo">Registrar</button>
+      <button mat-menu-item routerLink="/roles">Listar</button>
+    </mat-menu>
+  </mat-list-item>
 
-<mat-menu #menuRol="matMenu">
-  <button mat-menu-item routerLink="/roles/nuevo">Registrar</button>
-  <button mat-menu-item routerLink="/roles">Listar</button>
-</mat-menu>
+  <mat-list-item>
+    <button class="col1" mat-button [matMenuTriggerFor]="menuCategoria">Categoria</button>
+    <mat-menu #menuCategoria="matMenu">
+      <button mat-menu-item routerLink="/categories/nuevo">Registrar</button>
+      <button mat-menu-item routerLink="/categories">Listar</button>
+      
+    </mat-menu>
+  </mat-list-item>
 
-<mat-menu #menuCategoria="matMenu">
-  <button mat-menu-item routerLink="/categories/nuevo">Registrar</button>
-  <button mat-menu-item routerLink="/categories">Listar</button>
-  <!-- Agrega más elementos de menú si es necesario -->
-</mat-menu>
+  <mat-list-item>
+    <button class="col1" mat-button [matMenuTriggerFor]="menuDistrito">Distrito</button>
+    <mat-menu #menuDistrito="matMenu">
+      <button mat-menu-item routerLink="/districts/nuevo">Registrar</button>
+      <button mat-menu-item routerLink="/districts">Listar</button>
+    </mat-menu>
+  </mat-list-item>
 
-<mat-menu #menuDistrito="matMenu">
-  <button mat-menu-item routerLink="/districts/nuevo">Registrar</button>
-  <button mat-menu-item routerLink="/districts">Listar</button>
-</mat-menu>
+  <mat-list-item>
+    <button class="col1" mat-button [matMenuTriggerFor]="menuConsultas">Consultas</button>
+    <mat-menu #menuConsultas="matMenu">
+      <button mat-menu-item routerLink="/consultations/nuevo">Registrar</button>
+      <button mat-menu-item routerLink="/consultations">Listar</button>
+      <!-- Agrega más elementos de menú si es necesario -->
+    </mat-menu>
+  </mat-list-item>
 
-<mat-menu #menuConsultas="matMenu">
-  <button mat-menu-item routerLink="/consultations/nuevo">Registrar</button>
-  <button mat-menu-item routerLink="/consultations">Listar</button>
-  <!-- Agrega más elementos de menú si es necesario -->
-</mat-menu>
+  <mat-list-item>
+    <button class="col1" mat-button [matMenuTriggerFor]="menuDocumentacion">Documentación</button>
+    <mat-menu #menuDocumentacion="matMenu">
+      <button mat-menu-item routerLink="/documentations/nuevo">Registrar</button>
+      <button mat-menu-item routerLink="/documentations">Listar</button>
+    </mat-menu>
+  </mat-list-item>
 
-<mat-menu #menuDocumentacion="matMenu">
-  <button mat-menu-item routerLink="/documentations/nuevo">Registrar</button>
-  <button mat-menu-item routerLink="/documentations">Listar</button>
-</mat-menu>
+  <mat-list-item>
+    <button class="col1" mat-button [matMenuTriggerFor]="menuExpediente">Expediente</button>
+    <mat-menu #menuExpediente="matMenu">
+      <button mat-menu-item routerLink="/proceedings/nuevo">Registrar</button>
+      <button mat-menu-item routerLink="/proceedings">Listar</button>
+      <!-- Agrega más elementos de menú si es necesario -->
+    </mat-menu>
+  </mat-list-item>
 
-<mat-menu #menuExpediente="matMenu">
-  <button mat-menu-item routerLink="/proceedings/nuevo">Registrar</button>
-  <button mat-menu-item routerLink="/proceedings">Listar</button>
-  <!-- Agrega más elementos de menú si es necesario -->
-</mat-menu>
+  <mat-list-item>
+    <button class="col1" mat-button [matMenuTriggerFor]="menuJuzgados">Juzgados</button>
+    <mat-menu #menuJuzgados="matMenu">
+      <button mat-menu-item routerLink="/courts/nuevo">Registrar</button>
+      <button mat-menu-item routerLink="/courts">Listar</button>
+      <!-- Agrega más elementos de menú si es necesario -->
+    </mat-menu>
+  </mat-list-item>
 
-<mat-menu #menuJuzgados="matMenu">
-  <button mat-menu-item routerLink="/courts/nuevo">Registrar</button>
-  <button mat-menu-item routerLink="/courts">Listar</button>
-  <!-- Agrega más elementos de menú si es necesario -->
-</mat-menu>
+  <mat-list-item>
+    <button class="col1" mat-button [matMenuTriggerFor]="menuComentarios">Comentarios</button>
+    <mat-menu #menuComentarios="matMenu">
+      <button mat-menu-item routerLink="/comments/nuevo">Registrar</button>
+      <button mat-menu-item routerLink="/comments">Listar</button>
+      <!-- Agrega más elementos de menú si es necesario -->
+    </mat-menu>
+  </mat-list-item>
 
-<mat-menu #menuComentarios="matMenu">
-  <button mat-menu-item routerLink="/comments/nuevo">Registrar</button>
-  <button mat-menu-item routerLink="/comments">Listar</button>
-  <!-- Agrega más elementos de menú si es necesario -->
-</mat-menu>
+  <mat-list-item>
+    <button class="col1" mat-button [matMenuTriggerFor]="menuCertificacion">Certificacion</button>
+    <mat-menu #menuCertificacion="matMenu">
+      <button mat-menu-item routerLink="/certification/nuevo">Registrar</button>
+      <button mat-menu-item routerLink="/certification">Listar</button>
+      <!-- Agrega más elementos de menú si es necesario -->
+    </mat-menu>
+  </mat-list-item>
+    
+  </mat-nav-list>
+</mat-drawer>
+<mat-drawer-content>
+    <div style="text-align: center;min-height: 600px;">
 
-<mat-menu #menuCertificacion="matMenu">
-  <button mat-menu-item routerLink="/certification/nuevo">Registrar</button>
-  <button mat-menu-item routerLink="/certification">Listar</button>
-  <!-- Agrega más elementos de menú si es necesario -->
-</mat-menu>
-
-<router-outlet></router-outlet>
+        <router-outlet></router-outlet>
+        </div>
+</mat-drawer-content>
+</mat-drawer-container>

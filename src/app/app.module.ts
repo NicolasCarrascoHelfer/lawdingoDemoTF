@@ -20,6 +20,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
 
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 import { CategoryCreaeditaComponent } from './component/category/category-creaedita/category-creaedita.component';
 import { CategoryComponent } from './component/category/category.component';
 import { CategoryListarComponent } from './component/category/category-listar/category-listar.component';
@@ -50,6 +52,7 @@ import { CourtCreaeditaComponent } from './component/court/court-creaedita/court
 import { CertificationListarComponent } from './component/certification/certification-listar/certification-listar.component';
 import { CertificationComponent } from './component/certification/certification.component';
 import { CertificationCreaeditaComponent } from './component/certification/certification-creaedita/certification-creaedita.component';
+import { LandingComponent } from './component/landing/landing.component';
 
 
 
@@ -87,6 +90,7 @@ import { CertificationCreaeditaComponent } from './component/certification/certi
     CertificationListarComponent,
     CertificationComponent,
     CertificationCreaeditaComponent,
+    LandingComponent,
   ],
   imports: [
     BrowserModule,
@@ -107,7 +111,9 @@ import { CertificationCreaeditaComponent } from './component/certification/certi
     MatToolbarModule,
     MatInputModule,
     MatFormFieldModule,
-    MatListModule
+    MatListModule,
+    MatSidenavModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
