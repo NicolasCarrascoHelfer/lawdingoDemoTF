@@ -44,7 +44,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'role',
+    path: 'roles',
     component: RoleComponent,
     children: [
       { path: 'nuevo', component: RoleCreaeditaComponent },
