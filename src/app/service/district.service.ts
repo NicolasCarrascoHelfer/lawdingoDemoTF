@@ -42,7 +42,7 @@ export class DistrictService {
     // a pesar de no estar conectados
   }
   listId(id: number) {
-    return this.http.get<District[]>(`${this.url}/${id}`);
+    return this.http.get<District>(`${this.url}/${id}`);
   }
   update(c:District) { 
     return this.http.put(this.url, c);

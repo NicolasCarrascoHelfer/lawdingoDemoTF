@@ -1,1 +1,49 @@
-<p>creaedita-documentation works!</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" style="text-align: center">
+      <h2>Registro de Documentación</h2>
+      <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+        <mat-form-field class="example-full-width" *ngIf="edicion">
+          <mat-label>idDocumentation</mat-label>
+          <input matInput placeholder="Id"/>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="documentacion" formControlName="name" />
+          <mat-error
+            *ngIf="obtenerControlCampo('name')?.errors?.['required']"
+          >
+            El nombre es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+            <mat-label>Expediente</mat-label>
+            <mat-select 
+            [(value)]="idExpedienteSeleccionado"
+            formControlName="proceeding">
+              <mat-option *ngFor="let p of listaExpedientes" [value]="p.idProceeding">
+                {{p.name}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="obtenerControlCampo('proceeding')?.errors?.['required']">
+              El expediente es obligatorio.
+            </mat-error>
+          </mat-form-field>
+        <br />
+        <button mat-raised-button color="primary">Aceptar</button>
+        <button mat-raised-button color="warn" routerLink="/documentations">
+          Cancelar
+        </button>
+        <p>{{ mensaje }}</p>
+      </form>
+    </div>
+  </body>
+</html>
