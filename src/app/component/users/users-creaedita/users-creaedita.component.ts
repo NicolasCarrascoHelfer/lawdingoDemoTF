@@ -48,7 +48,7 @@ export class UsersCreaeditaComponent implements OnInit {
       dni: ['', Validators.required],
       birthDay: ['', Validators.required],
       username: ['', Validators.required],
-      rol:['', Validators.required],
+      
 
     });
   }
@@ -62,7 +62,6 @@ export class UsersCreaeditaComponent implements OnInit {
       this.usuario.dni = this.form.value.dni;
       this.usuario.birthDay = this.form.value.birthDay;
       this.usuario.username = this.form.value.username;
-      this.usuario.rol = this.form.value.rol;
 
       if (this.edicion) {
         this.uS.update(this.usuario).subscribe(() => {
@@ -102,7 +101,6 @@ export class UsersCreaeditaComponent implements OnInit {
           dni:new FormControl(data.dni),
           birthDay: new FormControl(data.birthDay),
           username:new FormControl(data.username),
-          rol:new FormControl(data.rol),
         });
       });
     }
