@@ -1,1 +1,50 @@
-<p>court-creaedita works!</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" style="text-align: center">
+      <h2>Registro de Juzgados</h2>
+      <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+        <mat-form-field class="example-full-width" *ngIf="edicion">
+          <mat-label>idCourts</mat-label>
+          <input matInput placeholder="Id" formControlName="idCourt"/>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="juzgados" formControlName="name" />
+          <mat-error
+            *ngIf="obtenerControlCampo('name')?.errors?.['required']"
+          >
+            El nombre es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+            <mat-label>Distrito</mat-label>
+            <mat-select 
+            [(value)]="idDistritoSeleccionado"
+            formControlName="district">
+              <mat-option *ngFor="let d of listaDistritos" [value]="d.idDistrict">
+                {{d.name}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="obtenerControlCampo('district')?.errors?.['required']">
+              El distrito es obligatorio.
+            </mat-error>
+          </mat-form-field>
+        <br />
+        <button mat-raised-button color="primary">Aceptar</button>
+        <button mat-raised-button color="warn" routerLink="/courts">
+          Cancelar
+        </button>
+        <p>{{ mensaje }}</p>
+      </form>
+    </div>
+  </body>
+</html>
+

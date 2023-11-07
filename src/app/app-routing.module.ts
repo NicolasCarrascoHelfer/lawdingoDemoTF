@@ -17,6 +17,7 @@ import { ProceedingCreaeditaComponent } from './component/proceeding/proceeding-
 import { CourtComponent } from './component/court/court.component';
 import { CourtCreaeditaComponent } from './component/court/court-creaedita/court-creaedita.component';
 
+
 const routes: Routes = [
   {
     path: 'users',

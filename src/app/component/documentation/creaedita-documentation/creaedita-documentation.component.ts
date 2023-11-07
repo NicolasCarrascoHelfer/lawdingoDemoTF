@@ -28,6 +28,7 @@ export class CreaeditaDocumentationComponent implements OnInit{
       
     });
     this.form = this.formBuilder.group({
+      idDocumentation: ['',],
       name: ['', Validators.required],
       proceeding: ['', Validators.required],
     });
@@ -38,6 +39,7 @@ export class CreaeditaDocumentationComponent implements OnInit{
   }
   aceptar(): void{
     if(this.form.valid){
+      this.documentation.idDocumentation=this.form.value.idDocumentation;
       this.documentation.name=this.form.value.name,
       this.documentation.proceeding.idProceeding=this.form.value.proceeding;
       if (this.edicion) {
