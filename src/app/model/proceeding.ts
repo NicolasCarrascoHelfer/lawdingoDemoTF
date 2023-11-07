@@ -4,7 +4,7 @@ export class Proceeding {
     //ATRIBUTOS
     idProceeding: number = 0;
     name: string = "";
-    state: string = '';
+    state: string = "";
     court: Court = new Court();
     client: Users = new Users();
     lawyer: Users = new Users();
