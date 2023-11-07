@@ -1,5 +1,5 @@
-import { Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { enviroment } from 'src/enviroments/enviroment';
 import { Court } from '../model/court';
 import { HttpClient } from '@angular/common/http';
@@ -10,9 +10,6 @@ const base_url = enviroment.base;
   providedIn: 'root'
 })
 export class CourtService {
-//declaracion de varibales privadas
-
-  //acceso al controlador
   private url = `${base_url}/courts`;
   private listaCambio = new Subject<Court[]>(); //trae la data de manera odenada
 
@@ -24,9 +21,9 @@ export class CourtService {
     return this.http.get<Court[]>(this.url); //METODO GET (HTTTP)
   }
   //insertar
-  insert(per: Court) {
+  insert(cou: Court) {
     //alienado al backend
-    return this.http.post(this.url, per); //METODO PSOT(HTTP)
+    return this.http.post(this.url, cou); //METODO PSOT(HTTP)
   }
 
   //llenar variable lista cambio
@@ -39,7 +36,7 @@ export class CourtService {
     // a pesar de no estar conectados
   }
   listId(id: number) {
-    return this.http.get<Court[]>(`${this.url}/${id}`);
+    return this.http.get<Court>(`${this.url}/${id}`);
   }
   update(c:Court) { 
     return this.http.put(this.url, c);

@@ -44,6 +44,9 @@ import { ConsultationListarComponent } from './component/consultation/consultati
 import { DocumentationComponent } from './component/documentation/documentation.component';
 import { ListarDocumentationComponent } from './component/documentation/listar-documentation/listar-documentation.component';
 import { CreaeditaDocumentationComponent } from './component/documentation/creaedita-documentation/creaedita-documentation.component';
+import { CourtComponent } from './component/court/court.component';
+import { CourtListarComponent } from './component/court/court-listar/court-listar.component';
+import { CourtCreaeditaComponent } from './component/court/court-creaedita/court-creaedita.component';
 
 
 
@@ -75,6 +78,9 @@ import { CreaeditaDocumentationComponent } from './component/documentation/creae
     DocumentationComponent,
     ListarDocumentationComponent,
     CreaeditaDocumentationComponent,
+    CourtComponent,
+    CourtListarComponent,
+    CourtCreaeditaComponent,
     
   ],
   imports: [
