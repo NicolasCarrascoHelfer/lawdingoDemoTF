@@ -38,7 +38,6 @@ export class CategoryCreaeditaComponent implements OnInit {
     this.form = this.formBuilder.group({
       idCategory: ['',],
       name: ['', Validators.required],
-
     });
   }
   aceptar(): void {

@@ -1,5 +1,5 @@
 export class District {
-    //ATRIBUTOS
-    idDistrict: number = 0;
-    name: string = '';
-  }
+  //ATRIBUTOS
+  idDistrict: number = 0;
+  name: string = '';
+}

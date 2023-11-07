@@ -1,1 +1,98 @@
-<p>proceeding-creaedita works!</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" style="text-align: center">
+      <br />
+      <h2>Registro de Expediente</h2>
+      <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+        <mat-form-field class="example-full-width" *ngIf="edicion">
+          <mat-label>ID del expediente</mat-label>
+          <input matInput placeholder="codigo" formControlName="idProceeding" />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label> Nombre del Expediente</mat-label>
+          <input matInput placeholder="expediente" formControlName="name" />
+          <mat-error *ngIf="obtenerControlCampo('name')?.errors?.['required']">
+            El nombre del expediente es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Estado del expediente</mat-label>
+          <mat-select placeholder="estado" formControlName="state">
+            <mat-option *ngFor="let p of estados" [value]="p.value">
+              {{ p.viewValue }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="obtenerControlCampo('state')?.errors?.['required']">
+            El estado del expediente es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Juzgado</mat-label>
+          <mat-select
+            [(value)]="idJuzgadoSeleccionado"
+            placeholder="juzgado"
+            formControlName="court"
+          >
+            <mat-option *ngFor="let p of listaJuzgados" [value]="p.idCourt">
+              {{ p.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="obtenerControlCampo('court')?.errors?.['required']">
+            El nombre del juzgado es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Cliente</mat-label>
+          <mat-select
+            [(value)]="idClienteSeleccionado"
+            placeholder="cliente"
+            formControlName="client"
+          >
+            <mat-option *ngFor="let p of listaClientes" [value]="p.idUser">
+              {{ p.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error
+            *ngIf="obtenerControlCampo('client')?.errors?.['required']"
+          >
+            El nombre del cliente es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Abogado</mat-label>
+          <mat-select
+            [(value)]="idAbogadoSeleccionado"
+            placeholder="abogado"
+            formControlName="lawyer"
+          >
+            <mat-option *ngFor="let p of listaAbogados" [value]="p.idUser">
+              {{ p.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error
+            *ngIf="obtenerControlCampo('lawyer')?.errors?.['required']"
+          >
+            El nombre del abogado es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <button mat-raised-button color="primary">Aceptar</button>
+        <button mat-raised-button color="warn" routerLink="/proceedings">
+          Cancelar
+        </button>
+        <p>{{ mensaje }}</p>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,21 +1,25 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { enviroment } from 'src/enviroments/enviroment';
 import { Proceeding } from '../model/proceeding';
 import { Subject } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+
 
 const base_url = enviroment.base;
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProceedingService {
+  //declaracion de varibales privadas
 
+  //acceso al controlador
   private url = `${base_url}/proceedings`;
   private listaCambio = new Subject<Proceeding[]>(); //trae la data de manera odenada
 
   constructor(private http: HttpClient) {}
 
+  
   //metodos
   //listar
   list() {
