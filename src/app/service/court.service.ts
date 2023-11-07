@@ -1,37 +1,36 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { Injectable } from '@angular/core';
 import { enviroment } from 'src/enviroments/enviroment';
-import { Proceeding } from '../model/proceeding';
+import { Court } from '../model/court';
+import { HttpClient } from '@angular/common/http';
 
 const base_url = enviroment.base;
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
-export class ProceedingService {
-  //declaracion de varibales privadas
+export class CourtService {
+//declaracion de varibales privadas
 
   //acceso al controlador
-  private url = `${base_url}/proceedings`;
-  private listaCambio = new Subject<Proceeding[]>(); //trae la data de manera odenada
+  private url = `${base_url}/courts`;
+  private listaCambio = new Subject<Court[]>(); //trae la data de manera odenada
 
   constructor(private http: HttpClient) {}
 
-  
   //metodos
   //listar
   list() {
-    return this.http.get<Proceeding[]>(this.url); //METODO GET (HTTTP)
+    return this.http.get<Court[]>(this.url); //METODO GET (HTTTP)
   }
   //insertar
-  insert(per: Proceeding) {
+  insert(per: Court) {
     //alienado al backend
     return this.http.post(this.url, per); //METODO PSOT(HTTP)
   }
 
   //llenar variable lista cambio
-  setList(listaNueva: Proceeding[]) {
+  setList(listaNueva: Court[]) {
     this.listaCambio.next(listaNueva);
   }
   getList() {
@@ -40,9 +39,9 @@ export class ProceedingService {
     // a pesar de no estar conectados
   }
   listId(id: number) {
-    return this.http.get<Proceeding>(`${this.url}/${id}`);
+    return this.http.get<Court[]>(`${this.url}/${id}`);
   }
-  update(c:Proceeding) { 
+  update(c:Court) { 
     return this.http.put(this.url, c);
   }
   delete(id: number) {

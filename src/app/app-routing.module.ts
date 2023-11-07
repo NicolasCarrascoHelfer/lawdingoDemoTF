@@ -10,6 +10,8 @@ import { RoleComponent } from './component/role/role.component';
 import { RoleCreaeditaComponent } from './component/role/role-creaedita/role-creaedita.component';
 import { ConsultationComponent } from './component/consultation/consultation.component';
 import { ConsultationCreaeditaComponent } from './component/consultation/consultation-creaedita/consultation-creaedita.component';
+import { ProceedingComponent } from './component/proceeding/proceeding.component';
+import { ProceedingCreaeditaComponent } from './component/proceeding/proceeding-creaedita/proceeding-creaedita.component';
 
 
 const routes: Routes = [
@@ -19,7 +21,6 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: UsersCreaeditaComponent },
       { path: 'ediciones/:id', component: UsersCreaeditaComponent },
-
     ],
   },
   {
@@ -28,7 +29,6 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CategoryCreaeditaComponent },
       { path: 'ediciones/:id', component: CategoryCreaeditaComponent },
-
     ],
   },
   {
@@ -36,8 +36,7 @@ const routes: Routes = [
     component: DistrictComponent,
     children: [
       { path: 'nuevo', component: DistrictCreaeditaComponent },
-      { path: 'ediciones/:id', component: DistrictCreaeditaComponent },
-      
+      { path: 'ediciones/:id', component: DistrictCreaeditaComponent },      
       ],
   },
   {
@@ -46,7 +45,6 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: RoleCreaeditaComponent },
       { path: 'ediciones/:id', component: RoleCreaeditaComponent },
-
     ],
   },
   {
@@ -55,16 +53,20 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: ConsultationCreaeditaComponent },
       { path: 'ediciones/:id', component: ConsultationCreaeditaComponent },
-      
-      
-
-
+    ],
+  },
+  {
+    path: 'proceedings',
+    component: ProceedingComponent,
+    children: [
+      { path: 'nuevo', component: ProceedingCreaeditaComponent },
+      { path: 'ediciones/:id', component: ProceedingCreaeditaComponent },
     ],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule { }

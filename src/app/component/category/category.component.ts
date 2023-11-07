@@ -4,10 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
-  styleUrls: ['./category.component.css']
+  styleUrls: ['./category.component.css'],
 })
 export class CategoryComponent {
-  constructor(public route:ActivatedRoute){
-
-  }
+  constructor(public route: ActivatedRoute) {}
 }
