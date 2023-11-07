@@ -66,17 +66,16 @@ export class ProceedingCreaeditaComponent implements OnInit {
       this.listaJuzgados = data;
     });
     this.cltS.list().subscribe((data) => {
-      
       this.listaUsuarios = data;
 
-      this.listaClientes = this.listaUsuarios.filter(obj => {
+      this.listaClientes = this.listaUsuarios.filter((obj) => {
         return obj.lawyer == false;
       });
     });
     this.lawS.list().subscribe((data) => {
       this.listaUsuarios = data;
 
-      this.listaAbogados = this.listaUsuarios.filter(obj => {
+      this.listaAbogados = this.listaUsuarios.filter((obj) => {
         return obj.lawyer == true;
       });
     });

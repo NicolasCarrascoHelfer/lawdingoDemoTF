@@ -10,6 +10,7 @@
   </button>
   <button mat-button [matMenuTriggerFor]="menuExpediente">Expediente</button>
   <button mat-button [matMenuTriggerFor]="menuJuzgados">Juzgados</button>
+  <button mat-button [matMenuTriggerFor]="menuComentarios">Comentarios</button>
 </mat-toolbar>
 
 <mat-menu #menuUsuario="matMenu">
@@ -44,17 +45,21 @@
   <button mat-menu-item routerLink="/documentations">Listar</button>
 </mat-menu>
 
-<router-outlet></router-outlet>
 <mat-menu #menuExpediente="matMenu">
   <button mat-menu-item routerLink="/proceedings/nuevo">Registrar</button>
   <button mat-menu-item routerLink="/proceedings">Listar</button>
   <!-- Agrega más elementos de menú si es necesario -->
 </mat-menu>
 
-<router-outlet></router-outlet>
 <mat-menu #menuJuzgados="matMenu">
   <button mat-menu-item routerLink="/courts/nuevo">Registrar</button>
   <button mat-menu-item routerLink="/courts">Listar</button>
+  <!-- Agrega más elementos de menú si es necesario -->
+</mat-menu>
+
+<mat-menu #menuComentarios="matMenu">
+  <button mat-menu-item routerLink="/comments/nuevo">Registrar</button>
+  <button mat-menu-item routerLink="/comments">Listar</button>
   <!-- Agrega más elementos de menú si es necesario -->
 </mat-menu>
 

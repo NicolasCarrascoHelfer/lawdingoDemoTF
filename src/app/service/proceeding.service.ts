@@ -4,7 +4,6 @@ import { enviroment } from 'src/enviroments/enviroment';
 import { Proceeding } from '../model/proceeding';
 import { Subject } from 'rxjs';
 
-
 const base_url = enviroment.base;
 
 @Injectable({
@@ -19,7 +18,6 @@ export class ProceedingService {
 
   constructor(private http: HttpClient) {}
 
-  
   //metodos
   //listar
   list() {
@@ -43,7 +41,7 @@ export class ProceedingService {
   listId(id: number) {
     return this.http.get<Proceeding>(`${this.url}/${id}`);
   }
-  update(p:Proceeding) { 
+  update(p: Proceeding) {
     return this.http.put(this.url, p);
   }
   delete(id: number) {
