@@ -21,8 +21,13 @@ import { CommentCreaeditaComponent } from './component/comment/comment-creaedita
 import { CertificationComponent } from './component/certification/certification.component';
 import { CertificationCreaeditaComponent } from './component/certification/certification-creaedita/certification-creaedita.component';
 
+import { LandingComponent } from './component/landing/landing.component';
 
 const routes: Routes = [
+  // {
+  //   path:'' ,component:LandingComponent,
+
+  // },
   {
     path: 'users',
     component: UsersComponent,
