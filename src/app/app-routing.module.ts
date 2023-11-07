@@ -14,6 +14,8 @@ import { DocumentationComponent } from './component/documentation/documentation.
 import { CreaeditaDocumentationComponent } from './component/documentation/creaedita-documentation/creaedita-documentation.component';
 import { ProceedingComponent } from './component/proceeding/proceeding.component';
 import { ProceedingCreaeditaComponent } from './component/proceeding/proceeding-creaedita/proceeding-creaedita.component';
+import { CourtComponent } from './component/court/court.component';
+import { CourtCreaeditaComponent } from './component/court/court-creaedita/court-creaedita.component';
 
 const routes: Routes = [
   {
@@ -70,6 +72,15 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: ProceedingCreaeditaComponent },
       { path: 'ediciones/:id', component: ProceedingCreaeditaComponent },
+    ],
+  },
+  {
+    path: 'courts',
+    component: CourtComponent,
+    children: [
+      { path: 'nuevo', component: CourtCreaeditaComponent },
+      { path: 'ediciones/:id', component: CourtCreaeditaComponent },
+
     ],
   },
 ];
