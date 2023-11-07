@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { CommentService } from 'src/app/service/comment.service';
+import { Comment } from 'src/app/model/comment';
 
 @Component({
   selector: 'app-comment-listar',

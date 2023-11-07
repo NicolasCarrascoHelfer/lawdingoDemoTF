@@ -81,7 +81,6 @@ import { CourtCreaeditaComponent } from './component/court/court-creaedita/court
     CourtComponent,
     CourtListarComponent,
     CourtCreaeditaComponent,
-    
   ],
   imports: [
     BrowserModule,

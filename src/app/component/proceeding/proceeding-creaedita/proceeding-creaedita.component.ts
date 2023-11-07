@@ -39,7 +39,7 @@ export class ProceedingCreaeditaComponent implements OnInit {
   idAbogadoSeleccionado: number = 0;
 
   constructor(
-    private cS: ProceedingService,
+    private pS: ProceedingService,
     private crtS: CourtService,
     private cltS: UsersService,
     private lawS: UsersService,
@@ -90,15 +90,15 @@ export class ProceedingCreaeditaComponent implements OnInit {
       this.expediente.lawyer.idUser = this.form.value.lawyer;
 
       if (this.edicion) {
-        this.cS.update(this.expediente).subscribe(() => {
-          this.cS.list().subscribe((data) => {
-            this.cS.setList(data);
+        this.pS.update(this.expediente).subscribe(() => {
+          this.pS.list().subscribe((data) => {
+            this.pS.setList(data);
           });
         });
       } else {
-        this.cS.insert(this.expediente).subscribe((data) => {
-          this.cS.list().subscribe((data) => {
-            this.cS.setList(data);
+        this.pS.insert(this.expediente).subscribe((data) => {
+          this.pS.list().subscribe((data) => {
+            this.pS.setList(data);
           });
         });
       }
@@ -116,7 +116,7 @@ export class ProceedingCreaeditaComponent implements OnInit {
   }
   init() {
     if (this.edicion) {
-      this.cS.listId(this.id).subscribe((data) => {
+      this.pS.listId(this.id).subscribe((data) => {
         this.form = new FormGroup({
           idProceeding: new FormControl(data.idProceeding),
           name: new FormControl(data.name),

@@ -1,1 +1,90 @@
-<p>comment-creaedita works!</p>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <br />
+      <h2>Registro de Expediente</h2>
+      <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+        <mat-form-field class="example-full-width" *ngIf="edicion">
+          <mat-label>ID del Comentario</mat-label>
+          <input matInput placeholder="codigo" formControlName="idComment" />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Cliente</mat-label>
+          <mat-select
+            [(value)]="idClienteSeleccionado"
+            placeholder="cliente"
+            formControlName="client"
+          >
+            <mat-option *ngFor="let p of listaClientes" [value]="p.idUser">
+              {{ p.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error
+            *ngIf="obtenerControlCampo('client')?.errors?.['required']"
+          >
+            El nombre del cliente es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Abogado</mat-label>
+          <mat-select
+            [(value)]="idAbogadoSeleccionado"
+            placeholder="abogado"
+            formControlName="lawyer"
+          >
+            <mat-option *ngFor="let p of listaAbogados" [value]="p.idUser">
+              {{ p.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error
+            *ngIf="obtenerControlCampo('lawyer')?.errors?.['required']"
+          >
+            El nombre del abogado es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label> Descripción del Comentario</mat-label>
+          <input
+            matInput
+            placeholder="descripcion"
+            formControlName="description"
+          />
+          <mat-error
+            *ngIf="obtenerControlCampo('description')?.errors?.['required']"
+          >
+            La descripcion del comentario es obligatoria.
+          </mat-error>
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Puntaje del comentario</mat-label>
+          <mat-select placeholder="puntos" formControlName="score">
+            <mat-option *ngFor="let p of puntos" [value]="p.value">
+              {{ p.viewValue }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="obtenerControlCampo('score')?.errors?.['required']">
+            El puntaje del comentario es obligatorio.
+          </mat-error>
+        </mat-form-field>
+        <br />
+
+        <br />
+        <button mat-raised-button color="primary">Aceptar</button>
+        <button mat-raised-button color="warn" routerLink="/comments">
+          Cancelar
+        </button>
+        <p>{{ mensaje }}</p>
+      </form>
+    </div>
+  </body>
+</html>
