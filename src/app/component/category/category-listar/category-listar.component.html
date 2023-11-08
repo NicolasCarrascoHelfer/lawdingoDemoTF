@@ -13,9 +13,7 @@
         <button
           mat-raised-button
           color="primary"
-          routerLink="/components/categories/nuevo"
-        >
-          Nuevo
+          routerLink="/components/categories/nuevo" [hidden]="role=='ADMIN'">Nuevo
         </button>
       </div>
       <mat-form-field>
@@ -35,8 +33,8 @@
         </ng-container>
 
         <ng-container matColumnDef="accion01">
-          <th mat-header-cell *matHeaderCellDef>Acciones</th>
-          <td mat-cell *matCellDef="let element">
+          <th [hidden]="role=='ADMIN'" mat-header-cell *matHeaderCellDef>Acciones</th>
+          <td [hidden]="role=='ADMIN'" mat-cell *matCellDef="let element">
             <mat-icon style="color: rgb(30, 116, 255)"[routerLink]="['ediciones', element.idCategory]" >autorenew</mat-icon>
             <mat-icon style="color: #ff1e57" (click)="eliminar(element.idCategory)">delete_outline</mat-icon>
           </td></ng-container>
