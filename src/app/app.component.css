@@ -1,0 +1,37 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.nav{
+    background-color: rgb(64, 164, 177);
+  }
+.head{
+    background-color: rgb(236, 237, 239);
+}
+.nav .col1{
+    color: white;
+    font-size: 15px;
+}
+
+.nav_menu{
+    display: flex;
+    margin-top:25px;
+
+  }
+.nav_menu a{
+    list-style: none;
+    color:black;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    margin-left: 40px;
+  }
+ 
+.nav_menu  a:hover{
+    color: rgb(24, 109, 158);
+}
+.navegation .btnR{
+    background-color: rgb(64, 164, 177);
+}
+.navegation .btnR:hover{
+    color:black
+}

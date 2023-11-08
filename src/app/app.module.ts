@@ -20,18 +20,13 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
 
-import { CategoryCreaeditaComponent } from './component/category/category-creaedita/category-creaedita.component';
-import { CategoryComponent } from './component/category/category.component';
-import { CategoryListarComponent } from './component/category/category-listar/category-listar.component';
-import { RoleComponent } from './component/role/role.component';
-import { RoleListarComponent } from './component/role/role-listar/role-listar.component';
-import { RoleCreaeditaComponent } from './component/role/role-creaedita/role-creaedita.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
+
 import { CommentComponent } from './component/comment/comment.component';
 import { CommentCreaeditaComponent } from './component/comment/comment-creaedita/comment-creaedita.component';
 import { CommentListarComponent } from './component/comment/comment-listar/comment-listar.component';
-import { UsersComponent } from './component/users/users.component';
-import { UsersCreaeditaComponent } from './component/users/users-creaedita/users-creaedita.component';
-import { UsersListarComponent } from './component/users/users-listar/users-listar.component';
+
 import { ProceedingComponent } from './component/proceeding/proceeding.component';
 import { ProceedingCreaeditaComponent } from './component/proceeding/proceeding-creaedita/proceeding-creaedita.component';
 import { ProceedingListarComponent } from './component/proceeding/proceeding-listar/proceeding-listar.component';
@@ -47,6 +42,12 @@ import { CreaeditaDocumentationComponent } from './component/documentation/creae
 import { CourtComponent } from './component/court/court.component';
 import { CourtListarComponent } from './component/court/court-listar/court-listar.component';
 import { CourtCreaeditaComponent } from './component/court/court-creaedita/court-creaedita.component';
+import { CertificationListarComponent } from './component/certification/certification-listar/certification-listar.component';
+import { CertificationComponent } from './component/certification/certification.component';
+import { CertificationCreaeditaComponent } from './component/certification/certification-creaedita/certification-creaedita.component';
+import { LandingComponent } from './component/landing/landing.component';
+import { LoginComponent } from './component/login/login.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -54,33 +55,30 @@ import { CourtCreaeditaComponent } from './component/court/court-creaedita/court
 @NgModule({
   declarations: [
     AppComponent,
-    CategoryCreaeditaComponent,
-    CategoryComponent,
-    CategoryListarComponent,
-    RoleComponent,
-    RoleListarComponent,
-    RoleCreaeditaComponent,
+    
     CommentComponent,
     CommentCreaeditaComponent,
     CommentListarComponent,
-    UsersComponent,
-    UsersCreaeditaComponent,
-    UsersListarComponent,
+
     ProceedingComponent,
     ProceedingCreaeditaComponent,
     ProceedingListarComponent,
     DistrictComponent,
     DistrictListarComponent,
     DistrictCreaeditaComponent,
-    ConsultationComponent,
-    ConsultationCreaeditaComponent,
-    ConsultationListarComponent,
+   
     DocumentationComponent,
     ListarDocumentationComponent,
     CreaeditaDocumentationComponent,
     CourtComponent,
     CourtListarComponent,
     CourtCreaeditaComponent,
+    CertificationListarComponent,
+    CertificationComponent,
+    CertificationCreaeditaComponent,
+    LandingComponent,
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -101,7 +99,10 @@ import { CourtCreaeditaComponent } from './component/court/court-creaedita/court
     MatToolbarModule,
     MatInputModule,
     MatFormFieldModule,
-    MatListModule
+    MatListModule,
+    MatSidenavModule,
+    MatSnackBarModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,16 @@
+mat-form-field {
+    width: 50%;
+}
+.logo {
+    height: 130px;
+    margin-bottom: 10px;
+  }
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background-color: #ffffff;
+    padding-bottom: 479px;
+  }
+  

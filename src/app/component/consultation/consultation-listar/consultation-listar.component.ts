@@ -19,7 +19,7 @@ export class ConsultationListarComponent implements OnInit{
     'abogado',
     'categoria',
     'accion01',
-    'accion02',
+    
     
   ];
 

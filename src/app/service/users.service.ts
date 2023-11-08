@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { enviroment } from 'src/enviroments/enviroment';
 import{Observable, Subject} from 'rxjs'
 import { Users } from '../model/users';
-import{HttpClient} from '@angular/common/http'
+import{HttpClient, HttpHeaders} from '@angular/common/http'
 
 const base_url=enviroment.base
 @Injectable({
@@ -16,7 +16,13 @@ export class UsersService {
   constructor(private http:HttpClient) { }
 
   list(){
-    return this.http.get<Users[]>(this.url);
+    let token = sessionStorage.getItem('token');
+
+    return this.http.get<Users[]>(this.url,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
   insert(p:Users){
     return this.http.post(`${this.url}/save`,p);

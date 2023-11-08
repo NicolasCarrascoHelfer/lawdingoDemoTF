@@ -82,7 +82,7 @@ export class RoleCreaeditaComponent implements OnInit {
           });
         });
       }
-      this.router.navigate(['roles']);
+      this.router.navigate(['/components/roles']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }

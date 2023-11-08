@@ -96,7 +96,7 @@ export class ConsultationCreaeditaComponent implements OnInit {
           });
         });
       }
-      this.router.navigate(['consultations']);
+      this.router.navigate(['/components/consultations']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }
