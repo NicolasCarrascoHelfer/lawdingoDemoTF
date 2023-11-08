@@ -26,6 +26,7 @@ export class CategoryService {
   //listar
   list() {
     let token = sessionStorage.getItem('token');
+
     return this.http.get<Category[]>(this.url,{
       headers: new HttpHeaders()
         .set('Authorization', `Bearer ${token}`)
@@ -35,8 +36,15 @@ export class CategoryService {
   //insertar
   insert(c: Category) {
     //alienado al backend
-    return this.http.post(this.url, c); //METODO PSOT(HTTP)
-  }
+    let token = sessionStorage.getItem('token');
+
+    return this.http.post(this.url, c,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
+  } //METODO PSOT(HTTP)
+  
 
   //llenar variable lista cambio
   setList(listaNueva: Category[]) {
@@ -48,12 +56,30 @@ export class CategoryService {
     // a pesar de no estar conectados
   }
   listId(id: number) {
-    return this.http.get<Category>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem('token');
+
+    return this.http.get<Category>(`${this.url}/${id}`, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
   update(c:Category) { 
-    return this.http.put(this.url, c);
+    let token = sessionStorage.getItem('token');
+
+    return this.http.put(this.url, c, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
   delete(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
+    let token = sessionStorage.getItem('token');
+
+    return this.http.delete(`${this.url}/${id}`, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
 }

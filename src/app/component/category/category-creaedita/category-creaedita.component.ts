@@ -58,7 +58,7 @@ export class CategoryCreaeditaComponent implements OnInit {
           });
         });
       }
-      this.router.navigate(['categories']);
+      this.router.navigate(['/components/categories']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }

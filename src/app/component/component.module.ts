@@ -21,11 +21,30 @@ import { ComponentRoutingModule } from './component-routing.module';
 import { UsersComponent } from './users/users.component';
 import { UsersCreaeditaComponent } from './users/users-creaedita/users-creaedita.component';
 import { UsersListarComponent } from './users/users-listar/users-listar.component';
+import { CategoryCreaeditaComponent } from './category/category-creaedita/category-creaedita.component';
+import { CategoryComponent } from './category/category.component';
+import { CategoryListarComponent } from './category/category-listar/category-listar.component';
+import { RoleComponent } from './role/role.component';
+import { RoleListarComponent } from './role/role-listar/role-listar.component';
+import { RoleCreaeditaComponent } from './role/role-creaedita/role-creaedita.component';
+import { ConsultationComponent } from './consultation/consultation.component';
+import { ConsultationCreaeditaComponent } from './consultation/consultation-creaedita/consultation-creaedita.component';
+import { ConsultationListarComponent } from './consultation/consultation-listar/consultation-listar.component';
+
 @NgModule({
   declarations: [
     UsersComponent,
     UsersCreaeditaComponent,
     UsersListarComponent,
+    CategoryCreaeditaComponent,
+    CategoryComponent,
+    CategoryListarComponent,
+    RoleComponent,
+    RoleListarComponent,
+    RoleCreaeditaComponent,
+    ConsultationComponent,
+    ConsultationCreaeditaComponent,
+    ConsultationListarComponent,
   ],
   imports: [
     CommonModule,

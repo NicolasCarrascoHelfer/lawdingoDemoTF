@@ -20,7 +20,8 @@ export class AppComponent {
     return this.loginService.verificar();
   }
   validarRol(){
-    if(this.role=='ADMIN' ){
+    if(this.role=='ADMIN' || this.role=='CLIENTE'|| this.role=='ABOGADO' ){
+      console.log((this.role))
       return true;
     }else{
       return false;
