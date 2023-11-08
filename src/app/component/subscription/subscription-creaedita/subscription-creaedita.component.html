@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" style="text-align: center">
+      <h2>Registro de Suscripcion</h2>
+      <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+        <mat-form-field class="example-full-width" *ngIf="edicion">
+          <mat-label>idSubscription</mat-label>
+          <input matInput placeholder="ID" formControlName="idSubscription" />
+        </mat-form-field>
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Tipo de Suscripcion</mat-label>
+          <input matInput placeholder="Tipo de Suscripcion" formControlName="name" />
+          <mat-error
+            *ngIf="obtenerControlCampo('name')?.errors?.['required']"
+          >
+            El tipo de Suscripcion es obligatorio.
+          </mat-error>
+        </mat-form-field>
+
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Monto</mat-label>
+          <input matInput placeholder="Monto" formControlName="amount"/>
+          <mat-error
+            *ngIf="obtenerControlCampo('amount')?.errors?.['required']"
+          >
+            El monto es obligatorio.
+          </mat-error>
+        </mat-form-field>
+
+        <br />
+        <mat-form-field appearance="fill" class="example-full-width">
+            <input
+              matInput
+              placeholder="Ingrese fecha de inicio"
+              [matDatepicker]="pickerStart"
+              formControlName="sub_start_date"
+            />
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="pickerStart"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #pickerStart></mat-datepicker>
+            <mat-error
+              *ngIf="obtenerControlCampo('sub_start_date')?.errors?.['required']"
+            >
+              La fecha de inicio es obligatorio.
+            </mat-error>
+          </mat-form-field>
+
+        <br />
+        <mat-form-field class="example-full-width">
+          <mat-label>Usuario</mat-label>
+          <mat-select 
+          [(value)]="idUsuarioSeleccionado"
+          formControlName="users">
+            <mat-option *ngFor="let u of listaUsuarios" [value]="u.idUser">
+              {{u.name}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="obtenerControlCampo('users')?.errors?.['required']">
+            Su nombre es obligatorio.
+          </mat-error>
+        </mat-form-field>
+       
+        <br />
+        <button mat-raised-button color="primary">Aceptar</button>
+        <button mat-raised-button color="warn" routerLink="/subscriptions">
+          Cancelar
+        </button>
+        <p>{{ mensaje }}</p>
+      </form>
+    </div>
+  </body>
+</html>
+

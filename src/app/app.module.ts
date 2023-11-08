@@ -47,6 +47,9 @@ import { CreaeditaDocumentationComponent } from './component/documentation/creae
 import { CourtComponent } from './component/court/court.component';
 import { CourtListarComponent } from './component/court/court-listar/court-listar.component';
 import { CourtCreaeditaComponent } from './component/court/court-creaedita/court-creaedita.component';
+import { SubscriptionComponent } from './component/subscription/subscription.component';
+import { SubscriptionCreaeditaComponent } from './component/subscription/subscription-creaedita/subscription-creaedita.component';
+import { SubscriptionListarComponent } from './component/subscription/subscription-listar/subscription-listar.component';
 
 
 
@@ -81,6 +84,9 @@ import { CourtCreaeditaComponent } from './component/court/court-creaedita/court
     CourtComponent,
     CourtListarComponent,
     CourtCreaeditaComponent,
+    SubscriptionComponent,
+    SubscriptionCreaeditaComponent,
+    SubscriptionListarComponent,
   ],
   imports: [
     BrowserModule,

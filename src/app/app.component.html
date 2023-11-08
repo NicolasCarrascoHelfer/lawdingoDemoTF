@@ -5,6 +5,7 @@
   <button mat-button [matMenuTriggerFor]="menuCategoria">Categoria</button>
   <button mat-button [matMenuTriggerFor]="menuDistrito">Distrito</button>
   <button mat-button [matMenuTriggerFor]="menuConsultas">Consultas</button>
+  <button mat-button [matMenuTriggerFor]="menuSubscripcion">Subscripcion</button>
   <button mat-button [matMenuTriggerFor]="menuDocumentacion">
     Documentación
   </button>
@@ -21,6 +22,11 @@
 <mat-menu #menuRol="matMenu">
   <button mat-menu-item routerLink="/roles/nuevo">Registrar</button>
   <button mat-menu-item routerLink="/roles">Listar</button>
+</mat-menu>
+
+<mat-menu #menuSubscripcion="matMenu">
+  <button mat-menu-item routerLink="/subscriptions/nuevo">Registrar</button>
+  <button mat-menu-item routerLink="/subscriptions">Listar</button>
 </mat-menu>
 
 <mat-menu #menuCategoria="matMenu">
