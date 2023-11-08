@@ -22,12 +22,7 @@ import { MatListModule } from '@angular/material/list';
 
 import {MatSidenavModule} from '@angular/material/sidenav';
 
-import { CategoryCreaeditaComponent } from './component/category/category-creaedita/category-creaedita.component';
-import { CategoryComponent } from './component/category/category.component';
-import { CategoryListarComponent } from './component/category/category-listar/category-listar.component';
-import { RoleComponent } from './component/role/role.component';
-import { RoleListarComponent } from './component/role/role-listar/role-listar.component';
-import { RoleCreaeditaComponent } from './component/role/role-creaedita/role-creaedita.component';
+
 import { CommentComponent } from './component/comment/comment.component';
 import { CommentCreaeditaComponent } from './component/comment/comment-creaedita/comment-creaedita.component';
 import { CommentListarComponent } from './component/comment/comment-listar/comment-listar.component';
@@ -60,12 +55,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
-    CategoryCreaeditaComponent,
-    CategoryComponent,
-    CategoryListarComponent,
-    RoleComponent,
-    RoleListarComponent,
-    RoleCreaeditaComponent,
+    
     CommentComponent,
     CommentCreaeditaComponent,
     CommentListarComponent,
@@ -76,9 +66,7 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     DistrictComponent,
     DistrictListarComponent,
     DistrictCreaeditaComponent,
-    ConsultationComponent,
-    ConsultationCreaeditaComponent,
-    ConsultationListarComponent,
+   
     DocumentationComponent,
     ListarDocumentationComponent,
     CreaeditaDocumentationComponent,

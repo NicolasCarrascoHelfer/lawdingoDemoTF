@@ -32,7 +32,13 @@ export class RoleService {
   //insertar
   insert(r: Role) {
     //alienado al backend
-    return this.http.post(this.url, r); //METODO PSOT(HTTP)
+    let token = sessionStorage.getItem('token');
+
+    return this.http.post(this.url, r, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    }); //METODO PSOT(HTTP)
   }
 
   //llenar variable lista cambio
@@ -45,12 +51,30 @@ export class RoleService {
     // a pesar de no estar conectados
   }
   listId(id: number) {
-    return this.http.get<Role>(`${this.url}/${id}`);
+    let token = sessionStorage.getItem('token');
+
+    return this.http.get<Role>(`${this.url}/${id}`, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
   update(r:Role) { 
-    return this.http.put(this.url, r);
+    let token = sessionStorage.getItem('token');
+
+    return this.http.put(this.url, r, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
   delete(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
+    let token = sessionStorage.getItem('token');
+
+    return this.http.delete(`${this.url}/${id}`, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
   }
 }
