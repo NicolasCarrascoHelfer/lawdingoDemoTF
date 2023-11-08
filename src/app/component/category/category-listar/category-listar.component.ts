@@ -11,7 +11,7 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class CategoryListarComponent implements OnInit {
   dataSource: MatTableDataSource<Category> = new MatTableDataSource();
-  displayedColumns: string[] = ['codigo', 'categoria', 'accion01','accion02'];
+  displayedColumns: string[] = ['codigo', 'categoria', 'accion01'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
