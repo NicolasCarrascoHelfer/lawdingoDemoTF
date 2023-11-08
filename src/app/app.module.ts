@@ -31,9 +31,7 @@ import { RoleCreaeditaComponent } from './component/role/role-creaedita/role-cre
 import { CommentComponent } from './component/comment/comment.component';
 import { CommentCreaeditaComponent } from './component/comment/comment-creaedita/comment-creaedita.component';
 import { CommentListarComponent } from './component/comment/comment-listar/comment-listar.component';
-import { UsersComponent } from './component/users/users.component';
-import { UsersCreaeditaComponent } from './component/users/users-creaedita/users-creaedita.component';
-import { UsersListarComponent } from './component/users/users-listar/users-listar.component';
+
 import { ProceedingComponent } from './component/proceeding/proceeding.component';
 import { ProceedingCreaeditaComponent } from './component/proceeding/proceeding-creaedita/proceeding-creaedita.component';
 import { ProceedingListarComponent } from './component/proceeding/proceeding-listar/proceeding-listar.component';
@@ -53,6 +51,8 @@ import { CertificationListarComponent } from './component/certification/certific
 import { CertificationComponent } from './component/certification/certification.component';
 import { CertificationCreaeditaComponent } from './component/certification/certification-creaedita/certification-creaedita.component';
 import { LandingComponent } from './component/landing/landing.component';
+import { LoginComponent } from './component/login/login.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 
@@ -69,9 +69,7 @@ import { LandingComponent } from './component/landing/landing.component';
     CommentComponent,
     CommentCreaeditaComponent,
     CommentListarComponent,
-    UsersComponent,
-    UsersCreaeditaComponent,
-    UsersListarComponent,
+
     ProceedingComponent,
     ProceedingCreaeditaComponent,
     ProceedingListarComponent,
@@ -91,6 +89,8 @@ import { LandingComponent } from './component/landing/landing.component';
     CertificationComponent,
     CertificationCreaeditaComponent,
     LandingComponent,
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -112,7 +112,8 @@ import { LandingComponent } from './component/landing/landing.component';
     MatInputModule,
     MatFormFieldModule,
     MatListModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatSnackBarModule
 
   ],
   providers: [],

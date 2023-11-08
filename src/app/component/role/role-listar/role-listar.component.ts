@@ -15,6 +15,7 @@ export class RoleListarComponent implements OnInit{
     'rol',
     'usuario',
     'accion01',
+    // 'accion02',
 
   ];
 
@@ -30,6 +31,13 @@ export class RoleListarComponent implements OnInit{
     this.rS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
+    });
+  }
+  eliminar(id: number) {
+    this.rS.delete(id).subscribe((data) => {
+      this.rS.list().subscribe((data) => {
+        this.rS.setList(data);
+      });
     });
   }
 

@@ -4,7 +4,7 @@ import { enviroment } from 'src/enviroments/enviroment';
 //se agrega los imports para actualizar la variables
 import { Subject } from 'rxjs';
 import { Category } from '../model/category';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders  } from '@angular/common/http';
 
 //declaracion de una constante
 const base_url = enviroment.base;
@@ -25,7 +25,12 @@ export class CategoryService {
   //metodos
   //listar
   list() {
-    return this.http.get<Category[]>(this.url); //METODO GET (HTTTP)
+    let token = sessionStorage.getItem('token');
+    return this.http.get<Category[]>(this.url,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    }); //METODO GET (HTTTP)
   }
   //insertar
   insert(c: Category) {

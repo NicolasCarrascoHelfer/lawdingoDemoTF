@@ -11,7 +11,7 @@ import { MatPaginator } from '@angular/material/paginator';
 })
 export class CategoryListarComponent implements OnInit {
   dataSource: MatTableDataSource<Category> = new MatTableDataSource();
-  displayedColumns: string[] = ['codigo', 'categoria', 'accion01'];
+  displayedColumns: string[] = ['codigo', 'categoria', 'accion01','accion02'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
@@ -24,6 +24,13 @@ export class CategoryListarComponent implements OnInit {
     this.cS.getList().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
+    });
+  }
+  eliminar(id: number) {
+    this.cS.delete(id).subscribe((data) => {
+      this.cS.list().subscribe((data) => {
+        this.cS.setList(data);
+      });
     });
   }
 
