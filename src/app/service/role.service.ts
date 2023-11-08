@@ -4,7 +4,7 @@ import { enviroment } from 'src/enviroments/enviroment';
 //se agrega los imports para actualizar la variables
 import { Subject } from 'rxjs';
 import { Role } from '../model/role';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders  } from '@angular/common/http';
 
 //declaracion de una constante
 const base_url = enviroment.base;
@@ -21,7 +21,13 @@ export class RoleService {
   //metodos
   //listar
   list() {
-    return this.http.get<Role[]>(this.url); //METODO GET (HTTTP)
+    let token = sessionStorage.getItem('token');
+
+    return this.http.get<Role[]>(this.url,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    }); //METODO GET (HTTTP)
   }
   //insertar
   insert(r: Role) {
