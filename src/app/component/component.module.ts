@@ -30,6 +30,9 @@ import { RoleCreaeditaComponent } from './role/role-creaedita/role-creaedita.com
 import { ConsultationComponent } from './consultation/consultation.component';
 import { ConsultationCreaeditaComponent } from './consultation/consultation-creaedita/consultation-creaedita.component';
 import { ConsultationListarComponent } from './consultation/consultation-listar/consultation-listar.component';
+import { SubscriptionComponent } from './subscription/subscription.component';
+import { SubscriptionCreaeditaComponent } from './subscription/subscription-creaedita/subscription-creaedita.component';
+import { SubscriptionListarComponent } from './subscription/subscription-listar/subscription-listar.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +48,9 @@ import { ConsultationListarComponent } from './consultation/consultation-listar/
     ConsultationComponent,
     ConsultationCreaeditaComponent,
     ConsultationListarComponent,
+    SubscriptionComponent,
+    SubscriptionCreaeditaComponent,
+    SubscriptionListarComponent,
   ],
   imports: [
     CommonModule,

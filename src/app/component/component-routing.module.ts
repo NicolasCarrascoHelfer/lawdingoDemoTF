@@ -20,7 +20,8 @@ import { CommentComponent } from './comment/comment.component';
 import { CommentCreaeditaComponent } from './comment/comment-creaedita/comment-creaedita.component';
 import { CertificationComponent } from './certification/certification.component';
 import { CertificationCreaeditaComponent } from './certification/certification-creaedita/certification-creaedita.component';
-
+import { SubscriptionCreaeditaComponent } from './subscription/subscription-creaedita/subscription-creaedita.component';
+import { SubscriptionComponent } from './subscription/subscription.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,19 @@ const routes: Routes = [
       { path: 'ediciones/:id', component: CreaeditaDocumentationComponent },
     ],
   },
+  
+  {
+    path: 'subscriptions',
+    component: SubscriptionComponent,
+    children: [
+      { path: 'nuevo', component: SubscriptionCreaeditaComponent },
+      { path: 'ediciones/:id', component: SubscriptionCreaeditaComponent },
+    ],
+  },
+
+
+
+
   {
     path: 'proceedings',
     component: ProceedingComponent,

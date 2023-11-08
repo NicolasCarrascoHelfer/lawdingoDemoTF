@@ -44,6 +44,16 @@
     </mat-menu>
   </mat-list-item>
 
+  
+  <mat-list-item>
+    <button class="col1" mat-button [matMenuTriggerFor]="menuSubscripcion"><mat-icon>perm_identity</mat-icon>Subscripcion</button>
+    <mat-menu #menuSubscripcion="matMenu">
+      <button mat-menu-item routerLink="components/subscriptions/nuevo">Registrar</button>
+      <button mat-menu-item routerLink="components/subscriptions">Listar</button>
+    </mat-menu>
+  </mat-list-item>
+
+
   <mat-list-item>
     <button class="col1" mat-button [matMenuTriggerFor]="menuCategoria" ><mat-icon> attach_file</mat-icon>Categoria</button>
     <mat-menu #menuCategoria="matMenu">
