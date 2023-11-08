@@ -18,8 +18,6 @@ import { CourtComponent } from './component/court/court.component';
 import { CourtCreaeditaComponent } from './component/court/court-creaedita/court-creaedita.component';
 import { CommentComponent } from './component/comment/comment.component';
 import { CommentCreaeditaComponent } from './component/comment/comment-creaedita/comment-creaedita.component';
-import { SubscriptionComponent } from './component/subscription/subscription.component';
-import { SubscriptionCreaeditaComponent } from './component/subscription/subscription-creaedita/subscription-creaedita.component';
 
 
 const routes: Routes = [
@@ -61,14 +59,6 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: ConsultationCreaeditaComponent },
       { path: 'ediciones/:id', component: ConsultationCreaeditaComponent },
-    ],
-  },
-  {
-    path: 'subscriptions',
-    component: SubscriptionComponent,
-    children: [
-      { path: 'nuevo', component: SubscriptionCreaeditaComponent },
-      { path: 'ediciones/:id', component: SubscriptionCreaeditaComponent },
     ],
   },
   {

@@ -16,6 +16,7 @@ export class UsersListarComponent implements OnInit {
     'username',
     'name',
     'email',
+    'password',
     'phone_num',
     'dni',
     'birthDay',
