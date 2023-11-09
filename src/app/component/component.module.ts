@@ -33,6 +33,9 @@ import { ConsultationListarComponent } from './consultation/consultation-listar/
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { SubscriptionCreaeditaComponent } from './subscription/subscription-creaedita/subscription-creaedita.component';
 import { SubscriptionListarComponent } from './subscription/subscription-listar/subscription-listar.component';
+import { NotificationCreaeditaComponent } from './notification/notification-creaedita/notification-creaedita.component';
+import { NotificationListarComponent } from './notification/notification-listar/notification-listar.component';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +54,9 @@ import { SubscriptionListarComponent } from './subscription/subscription-listar/
     SubscriptionComponent,
     SubscriptionCreaeditaComponent,
     SubscriptionListarComponent,
+    NotificationCreaeditaComponent,
+    NotificationListarComponent,
+    NotificationComponent,
   ],
   imports: [
     CommonModule,
