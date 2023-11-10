@@ -102,7 +102,7 @@ export class ProceedingCreaeditaComponent implements OnInit {
           });
         });
       }
-      this.router.navigate(['proceedings']);
+      this.router.navigate(['/components/proceedings']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }

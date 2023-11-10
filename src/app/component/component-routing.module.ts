@@ -83,8 +83,6 @@ const routes: Routes = [
   },
 
 
-
-
   {
     path: 'proceedings',
     component: ProceedingComponent,
