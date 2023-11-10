@@ -4,15 +4,14 @@ import { enviroment } from 'src/enviroments/enviroment';
 //se agrega los imports para actualizar la variables
 import { Subject } from 'rxjs';
 import { Consultation } from '../model/consultation';
-import { HttpClient , HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 //declaracion de una constante
 const base_url = enviroment.base;
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ConsultationService {
-
   private url = `${base_url}/consultations`;
   private listaCambio = new Subject<Consultation[]>(); //trae la data de manera odenada
 
@@ -59,7 +58,7 @@ export class ConsultationService {
         .set('Content-Type', 'application/json'),
     });
   }
-  update(c:Consultation) { 
+  update(c: Consultation) {
     let token = sessionStorage.getItem('token');
 
     return this.http.put(this.url, c, {

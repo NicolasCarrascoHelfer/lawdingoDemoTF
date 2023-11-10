@@ -6,10 +6,8 @@ export class Users {
   password: string = '';
   phone_num: number = 0;
   dni: number = 0;
-  birthDay: Date=new Date(Date.now());
-  lawyer: boolean=true;
-  username:string =""
-  enabled:boolean=true
-
-
+  birthDay: Date = new Date(Date.now());
+  lawyer: boolean = true;
+  username: string = '';
+  enabled: boolean = true;
 }
