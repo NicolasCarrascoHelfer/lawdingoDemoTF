@@ -94,7 +94,7 @@ export class CommentCreaeditaComponent implements OnInit{
           });
         });
       }
-      this.router.navigate(['comments']);
+      this.router.navigate(['/components/comments']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }

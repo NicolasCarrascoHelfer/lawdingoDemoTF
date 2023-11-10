@@ -1,63 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lawdingo</title>
-    
-</head>
 <body>
-    <!-- Encabezado -->
+    <!---- Encabezado ---->
     <header>
         <input type="checkbox" name="" id="menu">
         <label for="menu" class="fas fa-bars"></label>
         <div class="logo" >
-            <a href="index.html" ><img class="lgo" src="assets/images/Logo_LawDingo.png" alt="imagen del logo de la empresa Lawdingo"></a>
+            <a href="#home" >
+            <img class="lgo" src="../../../assets/images/Logo_LawDingo.png" alt="imagen del logo de la empresa Lawdingo"></a>
         </div>
         <nav class="navbar"> 
             <a href="#home">Home</a>
-            <a href="#servicios">Servicios</a>
             <a href="#info">Nosotros</a>
+            <a href="#servicios">Servicios</a>
             <a href="#planes"> Nuestros planes</a>
-            <a href="#contacto">Contacto</a>
-            
-            <a href="/login">Ingresar</a>
+            <a class="btnR" href="/login" style="background-color: rgb(64, 164, 177);color: white"   mat-raised-button >Ingresar</a>
           <a href="/registrar-usuario">Registrate</a>
         </nav>
 
-        <div class="icons">
-            <a href="#" class="fas fa-user"></a>
-        </div>
+        
     </header>
 
-    <!-- INICIO -->
+    <!---- INICIO ---->
     <section class="home" id="home">
         <div class="contenido">
-            <h3>Cuenta con un abogado tantas veces como necesites</h3>
+            <h3>Cuenta con un asesor legal tantas veces como necesites</h3>
             <p>Resuelve tus dudas legales con un abogado a un clic de distancia</p>
-            <a href="#" class="btn">Agendar cita</a>
+            <a href="#planes" class="btn">Hazte cliente</a>
         </div>
 
     </section>
 
-    <!-- Info+ -->
+    <!---- Info+ ---->
     <section class="info" id="info">
         <div class="columinfo">
             <div class="container-video">
-                <video src="assets/images/video-info.mp4" loop autoplay muted></video>
-                <h3>Abogados Expertos</h3>
+                <iframe src="https://www.youtube.com/embed/8CD2w_ctGsM?start=2" 
+                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+                encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                
             </div>
             <div class="contenido">
                 <h3>Un equipo de abogados expertos siempre a tu disposición</h3>
                 <p>Gestiona todas tus consultas desde área privada. Accede a tus documentos y 
-                    contacta con tu abogado en cualquier momento y estés donde estés.</p>
-                <a href="#planes" class="btn">Nuestro planes</a>
+                    contacta con tu abogado en cualquier momento y estés donde estés. Descarga nuestro aplicativo:</p>
+                <a href="https://play.google.com/store/apps?hl=es_PE&gl=US" target="_blank" class="btn"><span class="fa-brands fa-google-play"></span>Android</a>
+                <a href="https://www.apple.com/la/app-store/" target="_blank" class="btn"><span class="fa-brands fa-app-store-ios"></span>iOS</a>
             </div>
         </div>
     </section>
 
-    <!-- Servicios -->
+    <!---- Servicios ---->
     <section class="servicios" id="servicios">
         <h1 class="titulo">Nuestros Servicios</h1>
         <div class="container-serv">
@@ -67,7 +58,7 @@
                 </div>
                 <div class="content-serv">
                     <h3>Trabajo</h3>
-                    <p>Te asesoramos en temas relacionados con tus derechos laborales como la reducción de horas de trabajo. También te damos soporte en otras áreas como despidos y finiquitos, contratos, acoso laboral o jubilaciones.</p>
+                    <p>Te asesoramos en temas como la reducción de horas de trabajo. También te damos soporte en otras áreas como despidos, contratos, acoso laboral o jubilaciones.</p>
     
                 </div>
             </div>
@@ -196,14 +187,14 @@
     <section>
         <h1 class="titulo1"> Casos de Éxito</h1>
     </section>
-    <!-- Comentarios- contenido
+    <!-- Comentarios- contenido -->
     <section class="comentarios" id="comentarios">
         <div class="testimonios mySwiper">
             <div class="test-content swiper-wrapper">
                 <div class="slide swiper-slide">
                     <img src="assets/images/persona1.jpg" alt="imagen de una mujer joven cruzada de brazos sonriendo, vistiendo polo color naranja y jeans blancos" class="imaget">
                     <p> Utilicé LawDingo luego de haber perdido mi tiempo al buscar asesores legales 
-                        de manera tradicional, cuando lo usé mi situacion se solucioó rapidamente.
+                        de manera tradicional, cuando lo usé mi situacion se solucionó rapidamente.
                     </p>
                     <i class='bx bxs-quote-right quote-icon'></i>
 
@@ -224,18 +215,7 @@
                         <span class="cliente"> Cliente LawDingo</span>
                     </div>
                 </div>
-                <div class="slide swiper-slide">
-                    <img src="assets/images/persona3.jpg" alt="imagen de una señorita sonriendo y con los brazos cruzados, vistiendo un polo celeste con un jean azul claro" class="imaget">
-                    <p> Tener problemas legales y no conocer sobre leyes es una situacion complicada 
-                        pero gracias a este aplicativo puedo solucionar mis problemas legales sin ningun problema.</p>
-                    <i class='bx bxs-quote-right quote-icon'></i>
-
-                    <div class="detalle">
-                        <span class="nombre"> Maria Lopez</span>
-                        <span class="cliente"> Cliente LawDingo</span>
-                    </div>
-                </div>
-
+                
             </div>
             <div class="swiper-button-next nav-btn"></div>
             <div class="swiper-button-prev nav-btn"></div>
@@ -244,13 +224,10 @@
 
 
     </section>
-    <!-- Swiper -->
-    <script src="assets/scripts/swiper-bundle.min.js"></script>
-    <!-- JAVA -->
-    <script src="assets/scripts/script.js"></script> -->
+
 
     <!---- Contacto -------->
-    <section class="contacto" id="contacto">
+    <!-- <section class="contacto" id="contacto">
         <h1 class="titulo">Contáctanos</h1>
         <div class="containerc">
             <form action="">
@@ -267,29 +244,38 @@
             </div>
         </div>
         
-    </section>
+    </section> -->
 
-    <!---- Footer -------->
-    <section class="footer-lp"> 
-        <footer class="distribucion">
+    <!---- Footer ----->
+    <section class="footer-lp">
+        <footer class="distribucionf">
             <div class="izquierda">
                 <h3>Lawdingo</h3>
 
                 <p class="links">
                     <a href="#home">Home</a>
                     |
-                    <a href="Servicios.html">Servicios</a>
+                    <a href="#servicios">Servicios</a>
                     |
-                    <a href="Nosotros.html">Nosotros</a>
+                    <a href="#info">Nosotros</a>
                     |
-                    <a href="Planes.html"> Nuestros planes</a>
+                    <a href="#planes"> Nuestros planes</a>
                     |
-                    <a href="Contacto.html">Contacto</a>
+                    <a href="#contacto">Contacto</a>
                 </p>
 
-                <p class="nombre-empresa"> © Copyright 2022 <strong>Lawdingo</strong>
+                <p class="nombre-empresa"> © Copyright 2023 <strong>Lawdingo</strong>
                 - todos los derechos reservados</p>
             </div>
+            <div class="aplicativo">
+                <h3>Descarga nuestro aplicativo</h3>
+                <p>Disponible para telefonos Android y iOS</p>
+                <div class="logo-app">
+                   <a href="https://play.google.com/store/apps?hl=es_PE&gl=US" target="_blank"><img src="../../../assets/images/logo-android.png" alt="imagen de descarga en play store"></a> 
+                   <a href="https://www.apple.com/la/app-store/" target="_blank"><img src="../../../assets/images/logo-ios.png" alt="imagen de descarga en app store"></a>
+                </div>
+            </div>
+            
 
             <div class="centro">
                 <div>
@@ -302,19 +288,18 @@
                 </div>
                 <div>
                     <i class="fa fa-envelope"></i>
-                    <p>contacto:lawdingo.com</p>
+                    <p>contact@lawdingo.com</p>
                 </div>
             </div>
 
             <div class="derecha">
                 <p class="info-empresa">
-                    <span>Sobre Lawdingo</span>
-                    <strong>Lawdingo</strong> otorga asesoramiento legal especializado a personas con falta de conocimiento relacionado al ámbito legal</p>
+                    <span>Redes Sociales</span>
                 <div class="icons-footer">
-                    <a href="https://www.facebook.com/" target="_blank"><img src="assets/images/facebook.png" alt="imagen del logo de facebook"></a>
-                    <a href="https://www.instagram.com/" target="_blank"><img src="assets/images/instagram.png" alt="imagen del logo de instagram"></a>
-                    <a href="https://pe.linkedin.com/" target="_blank"><img src="assets/images/linkkedin.png" alt="imagen del logo de linkkedin"></a>
-                    <a href="https://twitter.com/?lang=es" target="_blank"><img src="assets/images/twitter.png" alt="imagen del logo de twitter"></a>
+                    <a href="https://www.facebook.com/" target="_blank"><img src="../../../assets/images/facebook.png" alt="imagen del logo de facebook"></a>
+                    <a href="https://www.instagram.com/" target="_blank"><img src="../../../assets/images/instagram.png" alt="imagen del logo de instagram"></a>
+                    <a href="https://pe.linkedin.com/" target="_blank"><img src="../../../assets/images/linkkedin.png" alt="imagen del logo de linkkedin"></a>
+                    <a href="https://twitter.com/?lang=es" target="_blank"><img src="../../../assets/images/twitter.png" alt="imagen del logo de twitter"></a>
                 </div>
             </div>
 
@@ -322,4 +307,3 @@
     </section>
     
 </body>
-</html>

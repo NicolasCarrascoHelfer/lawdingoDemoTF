@@ -61,7 +61,7 @@ constructor(
         });
       });
     }
-    this.router.navigate(['certification']);
+    this.router.navigate(['/components/certification']);
   } else {
     this.mensaje = 'Por favor complete todos los campos obligatorios.';
   }

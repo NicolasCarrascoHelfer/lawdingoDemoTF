@@ -33,6 +33,26 @@ import { ConsultationListarComponent } from './consultation/consultation-listar/
 import { SubscriptionComponent } from './subscription/subscription.component';
 import { SubscriptionCreaeditaComponent } from './subscription/subscription-creaedita/subscription-creaedita.component';
 import { SubscriptionListarComponent } from './subscription/subscription-listar/subscription-listar.component';
+import { CommentComponent } from './comment/comment.component';
+import { CommentCreaeditaComponent } from './comment/comment-creaedita/comment-creaedita.component';
+import { CommentListarComponent } from './comment/comment-listar/comment-listar.component';
+import { ProceedingComponent } from './proceeding/proceeding.component';
+import { ProceedingCreaeditaComponent } from './proceeding/proceeding-creaedita/proceeding-creaedita.component';
+import { ProceedingListarComponent } from './proceeding/proceeding-listar/proceeding-listar.component';
+import { DistrictComponent } from './district/district.component';
+import { DistrictListarComponent } from './district/district-listar/district-listar.component';
+import { DistrictCreaeditaComponent } from './district/district-creaedita/district-creaedita.component';
+
+import { DocumentationComponent } from './documentation/documentation.component';
+import { ListarDocumentationComponent } from './documentation/listar-documentation/listar-documentation.component';
+import { CreaeditaDocumentationComponent } from './documentation/creaedita-documentation/creaedita-documentation.component';
+import { CourtComponent } from './court/court.component';
+import { CourtListarComponent } from './court/court-listar/court-listar.component';
+import { CourtCreaeditaComponent } from './court/court-creaedita/court-creaedita.component';
+import { CertificationListarComponent } from './certification/certification-listar/certification-listar.component';
+import { CertificationComponent } from './certification/certification.component';
+import { CertificationCreaeditaComponent } from './certification/certification-creaedita/certification-creaedita.component';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +71,26 @@ import { SubscriptionListarComponent } from './subscription/subscription-listar/
     SubscriptionComponent,
     SubscriptionCreaeditaComponent,
     SubscriptionListarComponent,
+    CommentComponent,
+    CommentCreaeditaComponent,
+    CommentListarComponent,
+    ProceedingComponent,
+    ProceedingCreaeditaComponent,
+    ProceedingListarComponent,
+    DistrictComponent,
+    DistrictListarComponent,
+    DistrictCreaeditaComponent,
+   
+    DocumentationComponent,
+    ListarDocumentationComponent,
+    CreaeditaDocumentationComponent,
+    CourtComponent,
+    CourtListarComponent,
+    CourtCreaeditaComponent,
+    CertificationListarComponent,
+    CertificationComponent,
+    CertificationCreaeditaComponent,
+    LandingComponent,
   ],
   imports: [
     CommonModule,

@@ -55,7 +55,7 @@ export class CreaeditaDocumentationComponent implements OnInit{
           });
         });
       }
-      this.router.navigate(['documentations'])
+      this.router.navigate(['/components/documentations'])
     }else{
       this.mensaje='Ingrese todos los campos'
     }

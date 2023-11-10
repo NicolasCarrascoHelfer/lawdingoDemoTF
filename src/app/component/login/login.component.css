@@ -3,8 +3,10 @@ mat-form-field {
 }
 .logo {
     height: 130px;
+    margin-top: 7rem;
     margin-bottom: 10px;
   }
+
 .wrapper {
     display: flex;
     align-items: center;
@@ -13,4 +15,52 @@ mat-form-field {
     background-color: #ffffff;
     padding-bottom: 479px;
   }
+
+header{
+  position: fixed;
+  top:0; left:0; right:0;
+  background:#fff;
+  /* padding:2rem 2%; */
+  padding: 12px 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+}
+.lgo{
+    width: 30%;
+    /* padding-right: 60px; */
+  }
+.navbar a{
+    font-size: 22px;
+    padding:0 1rem;
+    color:black;
+    text-decoration: none;
+    font-weight: 2500;
+}
+
+.navbar a:hover{
+    color: rgb(24, 109, 158);
+}
+
+#menu {
+    display: none;
+}
+.fa-bars {
+    font-size: 3rem;
+    color:#333;
+    border-radius: .5rem;
+    padding:.5rem 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+.navbar .btnR{
+  background-color: rgb(64, 164, 177);
+  color: white;
+  font-size: 18px;
+}
+.navbar .btnR:hover{
+  color:black
+}
   

@@ -3,12 +3,16 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Consultation } from 'src/app/model/consultation';
 import { ConsultationService } from 'src/app/service/consultation.service';
 import { MatPaginator } from '@angular/material/paginator';
+import { LoginService } from 'src/app/service/login.service';
 @Component({
   selector: 'app-consultation-listar',
   templateUrl: './consultation-listar.component.html',
   styleUrls: ['./consultation-listar.component.css']
 })
 export class ConsultationListarComponent implements OnInit{
+  //AGREGACION DE ROL--------------------
+  role:string="";
+  ///////////////
   dataSource: MatTableDataSource<Consultation> = new MatTableDataSource();
   displayedColumns: string[] = [
     'codigo',
@@ -25,9 +29,14 @@ export class ConsultationListarComponent implements OnInit{
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private cS: ConsultationService) {
+  //AGREGACION DE LOGINSERVICE EN EL CONSTRUCTOR-----------------
+  constructor(private cS: ConsultationService, private ls:LoginService) {
   }
   ngOnInit(): void {
+    
+    //AGREGACION DE ROL-------------------
+    this.role=this.ls.showRole();
+    //////////////
     this.cS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;
