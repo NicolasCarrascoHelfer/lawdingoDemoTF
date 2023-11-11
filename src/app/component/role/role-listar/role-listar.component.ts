@@ -3,12 +3,17 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { RoleService } from 'src/app/service/role.service';
 import { Role } from 'src/app/model/role';
+import { LoginService } from 'src/app/service/login.service';
+
 @Component({
   selector: 'app-role-listar',
   templateUrl: './role-listar.component.html',
   styleUrls: ['./role-listar.component.css']
 })
 export class RoleListarComponent implements OnInit{
+  
+  role:string="";
+
   dataSource: MatTableDataSource<Role> = new MatTableDataSource();
   displayedColumns: string[] = [
     'codigo',
@@ -21,9 +26,11 @@ export class RoleListarComponent implements OnInit{
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private rS: RoleService) {
+  constructor(private rS: RoleService, private ls:LoginService) {
   }
   ngOnInit(): void {
+    this.role=this.ls.showRole();
+
     this.rS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;

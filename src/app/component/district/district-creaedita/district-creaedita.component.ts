@@ -54,7 +54,7 @@ export class DistrictCreaeditaComponent implements OnInit{
           });
         });
       }
-      this.router.navigate(['districts']);
+      this.router.navigate(['/components/districts']);
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';
     }

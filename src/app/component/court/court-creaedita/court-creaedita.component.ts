@@ -55,7 +55,7 @@ export class CourtCreaeditaComponent implements OnInit{
           });
         });
       }
-      this.router.navigate(['courts'])
+      this.router.navigate(['/components/courts'])
     }else{
       this.mensaje='Ingrese todos los campos'
     }

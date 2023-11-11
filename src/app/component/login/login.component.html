@@ -5,11 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
+  <header>
+    <input type="checkbox" name="" id="menu" />
+    <label for="menu" class="fas fa-bars"></label>
+    <div class="logo1">
+      <a href="#home">
+        <img
+          class="lgo"
+          src="../../../assets/images/Logo_LawDingo2.png"
+          alt="imagen del logo de la empresa Lawdingo"
+      /></a>
+    </div>
+    <nav class="navbar">
+      <a href="#home">Home</a>
+      <a href="#info">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#planes"> Nuestros planes</a>
+      <a class="btnR" href="/login" mat-raised-button>Ingresar</a>
+    </nav>
+  </header>
   <body class="wrapper">
     <div class="container" style="text-align: center">
       <div>
-        <img class="logo" src="assets/images/Logo_LawDingo.png" alt="Logo de la empresa" >
-
+        <img
+          class="logo"
+          src="assets/images/Logo_LawDingo.png"
+          alt="Logo de la empresa"
+        />
       </div>
       <h1>Sign in</h1>
 
@@ -19,23 +41,42 @@
       </mat-form-field>
       <br />
       <mat-form-field class="example-full-width">
-        <mat-label>Password</mat-label>
+        <mat-label>Contraseña</mat-label>
         <!-- <input
           type="password"
           matInput
           placeholder="Password"
           [(ngModel)]="password"
         />   -->
-        <input  matInput [type]="hide ? 'password' : 'text'" placeholder="Password" [(ngModel)]="password">
-    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" >
-      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-    </button>
+        <input
+          matInput
+          [type]="hide ? 'password' : 'text'"
+          placeholder="Password"
+          [(ngModel)]="password"
+        />
+        <button
+          mat-icon-button
+          matSuffix
+          (click)="hide = !hide"
+          [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide"
+        >
+          <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+        </button>
       </mat-form-field>
 
-
       <br />
-      <button mat-raised-button style="background-color: rgb(24, 109, 158);color:white" (click)="login()">Login</button>
-      <p class="mt-3">No tienes cuenta? <a routerLink="/registrar-usuario" style="color: #ff1e57">Registrar</a></p>
+      <button
+        mat-raised-button
+        style="background-color: rgb(24, 109, 158); color: white"
+        (click)="login()"
+      >
+        Login
+      </button>
+      <p class="mt-3">
+        No tienes cuenta?
+        <a routerLink="/registrar-usuario" style="color: #ff1e57">Registrar</a>
+      </p>
     </div>
   </body>
 </html>

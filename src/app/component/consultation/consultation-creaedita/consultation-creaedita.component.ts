@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import {  Consultation } from 'src/app/model/consultation';
+import { Consultation } from 'src/app/model/consultation';
 import { ConsultationService } from 'src/app/service/consultation.service';
 import {
   FormGroup,
@@ -17,7 +17,7 @@ import { CategoryService } from 'src/app/service/category.service';
 @Component({
   selector: 'app-consultation-creaedita',
   templateUrl: './consultation-creaedita.component.html',
-  styleUrls: ['./consultation-creaedita.component.css']
+  styleUrls: ['./consultation-creaedita.component.css'],
 })
 export class ConsultationCreaeditaComponent implements OnInit {
   form: FormGroup = new FormGroup({});
@@ -27,14 +27,13 @@ export class ConsultationCreaeditaComponent implements OnInit {
   edicion: boolean = false;
 
   listaCategorias: Category[] = [];
-  idCategoriaSeleccionada:number=0
+  idCategoriaSeleccionada: number = 0;
 
   listaClientes: Users[] = [];
-  idUsuarioSeleccionado:number=0
+  idUsuarioSeleccionado: number = 0;
 
   listaAbogados: Users[] = [];
-  idAbogadoSeleccionado:number=0
-
+  idAbogadoSeleccionado: number = 0;
 
   constructor(
     private cS: ConsultationService,
@@ -43,7 +42,7 @@ export class ConsultationCreaeditaComponent implements OnInit {
     private route: ActivatedRoute,
 
     private uS: UsersService,
-    private caS:CategoryService
+    private caS: CategoryService
   ) {}
 
   ngOnInit(): void {
@@ -53,25 +52,23 @@ export class ConsultationCreaeditaComponent implements OnInit {
       this.init();
     });
     this.form = this.formBuilder.group({
-      idConsultation: ['',],
+      idConsultation: [''],
       title: ['', Validators.required],
       date: ['', Validators.required],
       description: ['', Validators.required],
       cliente: ['', Validators.required],
       abogado: ['', Validators.required],
       categoria: ['', Validators.required],
-
     });
     ///USERS
     this.uS.list().subscribe((data) => {
-      this.listaClientes = data.filter(User=>User.lawyer==false);
-      this.listaAbogados = data.filter(User=>User.lawyer);
+      this.listaClientes = data.filter((User) => User.lawyer == false);
+      this.listaAbogados = data.filter((User) => User.lawyer == true);
     });
     ///CATEGORIA
     this.caS.list().subscribe((data) => {
       this.listaCategorias = data;
     });
-    
   }
   aceptar(): void {
     if (this.form.valid) {
@@ -120,7 +117,6 @@ export class ConsultationCreaeditaComponent implements OnInit {
           cliente: new FormControl(data.client.idUser),
           abogado: new FormControl(data.lawyer.idUser),
           categoria: new FormControl(data.categories.idCategory),
-
         });
       });
     }
