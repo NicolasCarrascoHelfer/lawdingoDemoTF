@@ -22,8 +22,6 @@ import { CertificationComponent } from './certification/certification.component'
 import { CertificationCreaeditaComponent } from './certification/certification-creaedita/certification-creaedita.component';
 import { SubscriptionCreaeditaComponent } from './subscription/subscription-creaedita/subscription-creaedita.component';
 import { SubscriptionComponent } from './subscription/subscription.component';
-import { NotificationComponent } from './notification/notification.component';
-import { NotificationCreaeditaComponent } from './notification/notification-creaedita/notification-creaedita.component';
 
 const routes: Routes = [
   {
@@ -74,7 +72,7 @@ const routes: Routes = [
       { path: 'ediciones/:id', component: CreaeditaDocumentationComponent },
     ],
   },
-
+  
   {
     path: 'subscriptions',
     component: SubscriptionComponent,
@@ -118,15 +116,6 @@ const routes: Routes = [
     children: [
       { path: 'nuevo', component: CertificationCreaeditaComponent },
       { path: 'ediciones/:id', component: CertificationCreaeditaComponent },
-    ],
-  },
-
-  {
-    path: 'notification',
-    component: NotificationComponent,
-    children: [
-      { path: 'nuevo', component: NotificationCreaeditaComponent },
-      { path: 'ediciones/:id', component: NotificationCreaeditaComponent },
     ],
   },
 ];

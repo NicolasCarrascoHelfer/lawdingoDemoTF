@@ -12,7 +12,7 @@
     <a href="#info">Nosotros</a>
     <a href="#planes"> Nuestros planes</a>
     <a href="#contacto">Contacto</a>
-
+    
     <a class="btn" href="#registrar" mat-raised-button >Registrate</a>
     <a href="/login" (click)="cerrar()">Cerrar Sesion </a>
     <button mat-menu-item>
@@ -33,7 +33,7 @@
       <button mat-menu-item routerLink="components/users">Listar</button>
     </mat-menu>
   </mat-list-item>
-
+  
 
 
   <mat-list-item>
@@ -44,7 +44,7 @@
     </mat-menu>
   </mat-list-item>
 
-
+  
   <mat-list-item>
     <button class="col1" mat-button [matMenuTriggerFor]="menuSubscripcion"><mat-icon>perm_identity</mat-icon>Subscripcion</button>
     <mat-menu #menuSubscripcion="matMenu">
@@ -59,7 +59,7 @@
     <mat-menu #menuCategoria="matMenu">
       <button mat-menu-item routerLink="components/categories/nuevo" *ngIf="role == 'ABOGADO'">Registrar</button>
       <button mat-menu-item routerLink="components/categories">Listar</button>
-
+      
     </mat-menu>
   </mat-list-item>
 
@@ -123,16 +123,7 @@
       <!-- Agrega más elementos de menú si es necesario -->
     </mat-menu>
   </mat-list-item>
-
-  <mat-list-item>
-    <button class="col1" mat-button [matMenuTriggerFor]="menuNotification">Notification</button>
-    <mat-menu #menuNotification="matMenu">
-      <button mat-menu-item routerLink="components/notification/nuevo">Registrar</button>
-      <button mat-menu-item routerLink="components/notification">Listar</button>
-      <!-- Agrega más elementos de menú si es necesario -->
-    </mat-menu>
-  </mat-list-item>
-
+    
   </mat-nav-list>
 </mat-drawer>
 <mat-drawer-content>
