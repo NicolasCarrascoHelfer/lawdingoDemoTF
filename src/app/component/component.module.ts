@@ -53,6 +53,9 @@ import { CertificationListarComponent } from './certification/certification-list
 import { CertificationComponent } from './certification/certification.component';
 import { CertificationCreaeditaComponent } from './certification/certification-creaedita/certification-creaedita.component';
 import { LandingComponent } from './landing/landing.component';
+import { NotificationComponent } from './notification/notification.component';
+import { NotificationListarComponent } from './notification/notification-listar/notification-listar.component';
+import { NotificationCreaeditaComponent } from './notification/notification-creaedita/notification-creaedita.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +94,9 @@ import { LandingComponent } from './landing/landing.component';
     CertificationComponent,
     CertificationCreaeditaComponent,
     LandingComponent,
+    NotificationComponent,
+    NotificationListarComponent,
+    NotificationCreaeditaComponent,
   ],
   imports: [
     CommonModule,

@@ -202,6 +202,23 @@
       </mat-list-item>
 
       <mat-list-item>
+        <button class="col1" mat-button [matMenuTriggerFor]="menuNofiticaciones">
+          Notificaciones
+        </button>
+        <mat-menu #menuNofiticaciones="matMenu">
+          <button
+            mat-menu-item
+            routerLink="components/notification/nuevo"
+            *ngIf="role == 'CLIENTE' || role == 'ADMIN'"
+          >
+            Registrar
+          </button>
+          <button mat-menu-item routerLink="components/notification">Listar</button>
+          <!-- Agrega más elementos de menú si es necesario -->
+        </mat-menu>
+      </mat-list-item>
+
+      <mat-list-item>
         <button class="col1" mat-button [matMenuTriggerFor]="menuCertificacion">
           Certificacion
         </button>
