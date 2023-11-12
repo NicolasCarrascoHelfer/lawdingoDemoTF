@@ -82,7 +82,7 @@ export class SubscriptionCreaeditaComponent implements OnInit {
           });
         });
       }
-      this.router.navigate(['subscriptions']);
+      this.router.navigate(['/components/subscriptions']);
 
     } else {
       this.mensaje = 'Por favor complete todos los campos obligatorios.';

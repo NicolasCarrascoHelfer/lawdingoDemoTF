@@ -3,13 +3,16 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Subscription } from 'src/app/model/subscription';
 import { SubscriptionService } from 'src/app/service/subscription.service';
 import { MatPaginator } from '@angular/material/paginator';
-
+import { LoginService } from 'src/app/service/login.service';
 @Component({
   selector: 'app-subscription-listar',
   templateUrl: './subscription-listar.component.html',
   styleUrls: ['./subscription-listar.component.css']
 })
 export class SubscriptionListarComponent implements OnInit {
+    //AGREGACION DE ROL--------------------
+    role:string="";
+    ///////////////
   dataSource: MatTableDataSource<Subscription> = new MatTableDataSource();
   displayedColumns:  string[] = [
     'codigo', 
@@ -23,9 +26,12 @@ export class SubscriptionListarComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   
-  constructor(private sS: SubscriptionService ){
+  constructor(private sS: SubscriptionService, private ls:LoginService ){
   }
   ngOnInit(): void {
+        //AGREGACION DE ROL-------------------
+        this.role=this.ls.showRole();
+        //////////////
     this.sS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;

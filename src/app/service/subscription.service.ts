@@ -1,11 +1,10 @@
-
 import { Injectable } from '@angular/core';
 import { enviroment } from 'src/enviroments/enviroment';
 
 //se agrega los imports para actualizar la variables
 import{ Subject} from 'rxjs'
 import { Subscription } from '../model/subscription';
-import{HttpClient} from '@angular/common/http'
+import{HttpClient, HttpHeaders } from '@angular/common/http'
 
 //declaracion de una constante
 const base_url=enviroment.base
@@ -23,13 +22,25 @@ export class SubscriptionService {
 
   //listar
   list(){
-    return this.http.get<Subscription[]>(this.url);
+    let token = sessionStorage.getItem('token');
+    return this.http.get<Subscription[]>(this.url,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    }); //METODO GET (HTTTP)
   }
+  
   //insertar
   insert(s: Subscription){
     //alineado al backend
-    return this.http.post(this.url, s); 
-  }
+    let token = sessionStorage.getItem('token');
+
+    return this.http.post(this.url, s,{
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
+  } //METODO PSOT(HTTP)
 
    //llenar variable lista cambio
   setList(listaNueva: Subscription[]) {
@@ -37,16 +48,38 @@ export class SubscriptionService {
   }
   getList() {
     return this.listaCambio.asObservable();
-    
-  }
-  listId(id: number) {
-    return this.http.get<Subscription>(`${this.url}/${id}`);
-  }
-  update(s: Subscription) { 
-    return this.http.put(this.url, s);
-  }
-  delete(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
+    //nos informa de todo lo nuevo que hay
+    // a pesar de no estar conectados
   }
 
+
+  listId(id: number) {
+    let token = sessionStorage.getItem('token');
+
+    return this.http.get<Subscription>(`${this.url}/${id}`, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
+  }
+
+  update(s: Subscription) { 
+    let token = sessionStorage.getItem('token');
+
+    return this.http.put(this.url, s, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
+  }
+
+  delete(id: number) {
+    let token = sessionStorage.getItem('token');
+
+    return this.http.delete(`${this.url}/${id}`, {
+      headers: new HttpHeaders()
+        .set('Authorization', `Bearer ${token}`)
+        .set('Content-Type', 'application/json'),
+    });
+  }
 }
