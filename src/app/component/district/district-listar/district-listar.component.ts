@@ -9,6 +9,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-district-listar',
@@ -16,6 +17,7 @@ import {
   styleUrls: ['./district-listar.component.css'],
 })
 export class DistrictListarComponent implements OnInit {
+  role:string="";
   dataSource: MatTableDataSource<District> = new MatTableDataSource();
   mensaje: string = '';
   idVacio: boolean = false;
@@ -23,8 +25,11 @@ export class DistrictListarComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private dS: DistrictService, private formBuilder: FormBuilder) {}
-  ngOnInit() {
+  constructor(private dS: DistrictService, private loginService: LoginService) {}
+  
+  
+  ngOnInit():void {
+    this.role = this.loginService.showRole();
     this.dS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;

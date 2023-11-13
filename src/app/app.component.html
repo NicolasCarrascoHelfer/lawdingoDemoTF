@@ -93,9 +93,9 @@
         </mat-menu>
       </mat-list-item>
 
-      <mat-list-item>
+      <mat-list-item *ngIf="role == 'ADMIN' || role == 'ABOGADO'">
         <button class="col1" mat-button [matMenuTriggerFor]="menuDistrito">
-          Distrito
+          <mat-icon>room</mat-icon>Distrito
         </button>
         <mat-menu #menuDistrito="matMenu">
           <button
@@ -130,15 +130,19 @@
         </mat-menu>
       </mat-list-item>
 
-      <mat-list-item>
-        <button class="col1" mat-button [matMenuTriggerFor]="menuDocumentacion">
-          Documentación
+      <mat-list-item *ngIf="role == 'ADMIN' || role == 'ABOGADO'">
+        <button 
+          class="col1" 
+          mat-button 
+          [matMenuTriggerFor]="menuDocumentacion"
+        >
+          <mat-icon>assignment</mat-icon>Documentación
         </button>
         <mat-menu #menuDocumentacion="matMenu">
           <button
             mat-menu-item
             routerLink="components/documentations/nuevo"
-            *ngIf="role == 'ADMIN' || role == 'ABOGADO'"
+            *ngIf="role == 'ADMIN'"
           >
             Registrar
           </button>
@@ -167,9 +171,9 @@
         </mat-menu>
       </mat-list-item>
 
-      <mat-list-item>
+      <mat-list-item *ngIf="role == 'ADMIN' || role == 'ABOGADO'">
         <button class="col1" mat-button [matMenuTriggerFor]="menuJuzgados">
-          Juzgados
+          <mat-icon>account_balance</mat-icon>Juzgados
         </button>
         <mat-menu #menuJuzgados="matMenu">
           <button
