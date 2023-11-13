@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Documentation } from 'src/app/model/documentation';
 import { DocumentationService } from 'src/app/service/documentation.service';
+import { LoginService } from 'src/app/service/login.service';
 
 @Component({
   selector: 'app-listar-documentation',
@@ -11,6 +12,7 @@ import { DocumentationService } from 'src/app/service/documentation.service';
   styleUrls: ['./listar-documentation.component.css']
 })
 export class ListarDocumentationComponent implements OnInit{
+  role:string="";
   dataSource: MatTableDataSource<Documentation> = new MatTableDataSource();
   mensaje: string = '';
   idVacio: boolean = false;
@@ -25,9 +27,10 @@ export class ListarDocumentationComponent implements OnInit{
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private dS: DocumentationService, private formBuilder: FormBuilder) {
+  constructor(private dS: DocumentationService, private formBuilder: FormBuilder, private loginService: LoginService) {
   }
   ngOnInit() {
+    this.role = this.loginService.showRole();
     this.dS.list().subscribe((data) => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.paginator = this.paginator;

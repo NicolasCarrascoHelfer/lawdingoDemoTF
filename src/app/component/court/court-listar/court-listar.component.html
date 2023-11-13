@@ -10,7 +10,7 @@
       <br />
       <h2 style="text-align: center">Lista de juzgados</h2>
       <div style="text-align: right;">
-        <button mat-raised-button color="primary" routerLink="/components/courts/nuevo">Nuevo</button>
+        <button *ngIf="role == 'ADMIN'" mat-raised-button color="primary" routerLink="/components/courts/nuevo">Nuevo</button>
       </div>
       <mat-form-field>
         <input matInput (keyup)=filter($event) placeholder="buscar"/>
@@ -36,8 +36,8 @@
                 </td></ng-container>
   
               <ng-container matColumnDef="accion01">
-                <th mat-header-cell *matHeaderCellDef>Acciones</th>
-                <td mat-cell *matCellDef="let element">
+                <th [hidden]="role=='ABOGADO'||role=='CLIENTE'" mat-header-cell *matHeaderCellDef>Acciones</th>
+                <td [hidden]="role=='ABOGADO'||role=='CLIENTE'" mat-cell *matCellDef="let element">
                   <button
                     mat-raised-button
                     color="warn"
@@ -48,8 +48,8 @@
                 </td></ng-container
               >
               <ng-container matColumnDef="accion02">
-                <th mat-header-cell *matHeaderCellDef>Acciones</th>
-                <td mat-cell *matCellDef="let element">
+                <th [hidden]="role=='ABOGADO'||role=='CLIENTE'" mat-header-cell *matHeaderCellDef>Acciones</th>
+                <td [hidden]="role=='ABOGADO'||role=='CLIENTE'" mat-cell *matCellDef="let element">
                   <button
                     mat-raised-button
                     color="accent"
