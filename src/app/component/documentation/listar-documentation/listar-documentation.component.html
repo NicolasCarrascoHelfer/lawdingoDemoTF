@@ -10,7 +10,7 @@
       <br />
       <h2 style="text-align: center">Lista de documentos</h2>
       <div style="text-align: right;">
-        <button *ngIf="role == 'ADMIN'" mat-raised-button color="primary" routerLink="/components/documentations/nuevo">Nuevo</button>
+        <button mat-raised-button color="primary" routerLink="/components/documentations/nuevo">Nuevo</button>
       </div>
       <mat-form-field>
         <input matInput (keyup)=filter($event) placeholder="buscar"/>
@@ -36,27 +36,10 @@
                 </td></ng-container>
   
               <ng-container matColumnDef="accion01">
-                <th [hidden]="role=='ABOGADO'||role=='CLIENTE'" mat-header-cell *matHeaderCellDef>Acciones</th>
-                <td [hidden]="role=='ABOGADO'||role=='CLIENTE'" mat-cell *matCellDef="let element">
-                  <button
-                    mat-raised-button
-                    color="warn"
-                    [routerLink]="['ediciones', element.idDocumentation]"
-                  >
-                    Actualizar
-                  </button>
-                </td></ng-container
-              >
-              <ng-container matColumnDef="accion02">
-                <th [hidden]="role=='ABOGADO'||role=='CLIENTE'" mat-header-cell *matHeaderCellDef>Acciones</th>
-                <td [hidden]="role=='ABOGADO'||role=='CLIENTE'" mat-cell *matCellDef="let element">
-                  <button
-                    mat-raised-button
-                    color="accent"
-                    (click)="eliminar(element.idDocumentation)"
-                  >
-                    Eliminar
-                  </button>
+                <th [hidden]="role=='CLIENTE'" mat-header-cell *matHeaderCellDef>Acciones</th>
+                <td [hidden]="role=='CLIENTE'" mat-cell *matCellDef="let element">
+                  <mat-icon style="color: rgb(30, 116, 255)"[routerLink]="['ediciones', element.idDistrict]" >autorenew</mat-icon>
+                  <mat-icon style="color: #ff1e57" (click)="eliminar(element.idDistrict)">delete_outline</mat-icon>
                 </td></ng-container>
             
               <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
