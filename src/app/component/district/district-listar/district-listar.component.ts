@@ -10,6 +10,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { LoginService } from 'src/app/service/login.service';
+import { UsersService } from 'src/app/service/users.service';
 
 @Component({
   selector: 'app-district-listar',
@@ -21,11 +22,11 @@ export class DistrictListarComponent implements OnInit {
   dataSource: MatTableDataSource<District> = new MatTableDataSource();
   mensaje: string = '';
   idVacio: boolean = false;
-  displayedColumns: string[] = ['codigo', 'distrito', 'accion01', 'accion02'];
+  displayedColumns: string[] = ['codigo', 'distrito', 'accion01'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private dS: DistrictService, private loginService: LoginService) {}
+  constructor(private dS: DistrictService, private loginService: LoginService, private userService: UsersService) {}
   
   
   ngOnInit():void {

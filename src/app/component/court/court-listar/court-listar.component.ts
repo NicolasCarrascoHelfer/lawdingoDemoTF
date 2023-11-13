@@ -21,13 +21,11 @@ export class CourtListarComponent implements OnInit{
     'juzgado',
     'distrito',
     'accion01',
-    'accion02',
-    
   ];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private cS: CourtService, private loginService: LoginService) {
+  constructor(private cS: CourtService, private loginService: LoginService, ) {
   }
   ngOnInit() {
     this.role = this.loginService.showRole();

@@ -15,13 +15,13 @@ export class ListarDocumentationComponent implements OnInit{
   role:string="";
   dataSource: MatTableDataSource<Documentation> = new MatTableDataSource();
   mensaje: string = '';
+  arrDoc: Documentation[] = [];
   idVacio: boolean = false;
   displayedColumns: string[] = [
     'codigo',
     'documentacion',
     'expediente',
     'accion01',
-    'accion02',
     
   ];
 
@@ -30,13 +30,16 @@ export class ListarDocumentationComponent implements OnInit{
   constructor(private dS: DocumentationService, private formBuilder: FormBuilder, private loginService: LoginService) {
   }
   ngOnInit() {
+    
     this.role = this.loginService.showRole();
-    this.dS.list().subscribe((data) => {
-      this.dataSource = new MatTableDataSource(data);
+    this.dS.list().subscribe((data)=>{
+      this.view(data);
+      this.dataSource = new MatTableDataSource(this.arrDoc);
       this.dataSource.paginator = this.paginator;
-    });
+    })
     this.dS.getList().subscribe((data) => {
-      this.dataSource = new MatTableDataSource(data);
+      this.view(data);
+      this.dataSource = new MatTableDataSource(this.arrDoc);
       this.dataSource.paginator = this.paginator;
     });
   }
@@ -49,5 +52,17 @@ export class ListarDocumentationComponent implements OnInit{
   }
   filter(en: any) {
     this.dataSource.filter = en.target.value.trim();
+  }
+  view(data:any){
+    if(this.role == 'ABOGADO'){
+      for(let i=0;i<data.length;i++){
+        if(data[i].proceeding.lawyer.username==this.loginService.showUsername()){
+          this.arrDoc.push(data[i])
+        }
+      };
+    }
+    else{
+      this.arrDoc = data;
+    }
   }
 }

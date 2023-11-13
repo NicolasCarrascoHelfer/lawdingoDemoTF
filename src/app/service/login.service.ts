@@ -28,4 +28,12 @@ export class LoginService {
     const decodedToken = helper.decodeToken(token);
     return decodedToken?.role;
   }
+  showUsername(){
+    let username = sessionStorage.getItem("username")
+    if (!username) {
+      // Manejar el caso en el que el token es nulo.
+      return "none"; // O cualquier otro valor predeterminado dependiendo del contexto.
+    }
+    return username;
+  }
 }
