@@ -10,7 +10,7 @@
     <br />
     <h2 style="text-align: center">Lista de distritos</h2>
     <div style="text-align: right;">
-      <button *ngIf="role == 'ADMIN'" mat-raised-button color="primary" routerLink="/components/districts/nuevo">Nuevo</button>
+      <button *ngIf="role == 'ADMIN'" mat-raised-button color="primary" routerLink="/components/districts/nuevo" style="background-color: #7C70C7;">Nuevo</button>
     </div>
     <mat-form-field>
       <input matInput (keyup)=filter($event) placeholder="buscar"/>

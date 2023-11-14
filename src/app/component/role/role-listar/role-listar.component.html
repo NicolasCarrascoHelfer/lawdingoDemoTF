@@ -10,7 +10,7 @@
       <br />
       <h2 style="text-align: center">Lista de Roles</h2>
       <div style="text-align: right">
-        <button [hidden]="role=='ABOGADO'||role=='CLIENTE'" mat-raised-button color="primary" routerLink="/components/roles/nuevo"> Nuevo</button>
+        <button [hidden]="role=='ABOGADO'||role=='CLIENTE'" mat-raised-button color="primary" routerLink="/components/roles/nuevo" style="background-color: #7C70C7;"> Nuevo</button>
       </div>
       <mat-form-field>
         <input matInput (keyup)="filter($event)" placeholder="buscar" />
