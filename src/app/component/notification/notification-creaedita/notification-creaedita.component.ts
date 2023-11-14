@@ -29,7 +29,6 @@ export class NotificationCreaeditaComponent implements OnInit {
     private router: Router,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
-
     private uS: UsersService,
   ) {}
 
