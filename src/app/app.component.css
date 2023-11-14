@@ -5,7 +5,7 @@
     background-color: rgb(64, 164, 177);
   }
 .head{
-    background-color: rgb(236, 237, 239);
+    color: #7C70C7;;
 }
 .nav .col1{
     color: white;
@@ -32,9 +32,10 @@
     background-color: rgb(56, 180, 196);
     margin-top: -5px;
     margin-left: 17px;
+    color: white;
 }
 .navegation .btnR:hover{
-    color:white
+    color:black
 }
 .navegation .btnrol{
   font-size: 14px;
@@ -43,6 +44,11 @@
 }
 .navegation .btnrol:hover{
   color:black;
+  
+}
+.head .logmen{
+  
+  max-width: 190px;
   
 }
 

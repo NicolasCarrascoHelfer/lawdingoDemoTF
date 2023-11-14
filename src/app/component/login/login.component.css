@@ -2,8 +2,8 @@ mat-form-field {
     width: 50%;
 }
 .logo {
-    height: 130px;
-    margin-top: 7rem;
+    height: 80px;
+    margin-top: 8rem;
     margin-bottom: 10px;
   }
 
@@ -12,8 +12,8 @@ mat-form-field {
     align-items: center;
     justify-content: center;
     height: 100%;
-    background-color: #ffffff;
-    padding-bottom: 479px;
+    background-color: #F5F9FF;
+    padding-bottom: 200px;
   }
 
 header{
@@ -27,6 +27,7 @@ header{
   justify-content: space-between;
   z-index: 1000;
   box-shadow: 0 .5rem 1rem rgba(0,0,0,.1);
+  
 }
 .lgo{
     width: 30%;
@@ -62,5 +63,9 @@ header{
 }
 .navbar .btnR:hover{
   color:black
+}
+.container h1{
+  color: #7C70C7;
+  
 }
   

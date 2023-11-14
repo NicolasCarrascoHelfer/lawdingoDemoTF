@@ -2,13 +2,12 @@
   <button (click)="drawer.toggle()" mat-icon-button>
     <mat-icon>menu</mat-icon>
   </button>
-  <span>Lawdingo</span>
+  <img class="logmen" src="assets/images/Logo_LawDingo-removebg.png" alt="">
   <span class="example-spacer"></span>
 
   <nav class="navegation">
     <ul class="nav_menu">
-      <a class="btnR" href="/login" (click)="cerrar()" mat-raised-button
-        ><mat-icon>logout</mat-icon>Cerrar Sesion
+      <a class="btnR" href="/login" (click)="cerrar()" mat-raised-button><mat-icon>logout</mat-icon>Cerrar Sesion
       </a>
       <a class="btnrol"
         >Rol:<span>{{ role }}</span></a
@@ -20,9 +19,9 @@
 <mat-drawer-container>
   <mat-drawer class="nav" #drawer opened="true" mode="side" position="start">
     <mat-nav-list *ngIf="verificar()">
-      <mat-list-item class="col1">
+      <mat-list-item class="col1" [hidden]="role == 'ABOGADO' || role == 'CLIENTE'">
         <button
-          [hidden]="role == 'ABOGADO' || role == 'CLIENTE'"
+          
           class="col1"
           mat-button
           [matMenuTriggerFor]="menuUsuario"
@@ -41,7 +40,7 @@
         </mat-menu>
       </mat-list-item>
 
-      <mat-list-item>
+      <mat-list-item [hidden]="role == 'ABOGADO' || role == 'CLIENTE'">
         <button class="col1" mat-button [matMenuTriggerFor]="menuRol">
           <mat-icon>perm_identity</mat-icon>Rol
         </button>
@@ -57,7 +56,7 @@
         </mat-menu>
       </mat-list-item>
 
-      <mat-list-item>
+      <mat-list-item [hidden]="role == 'ABOGADO' || role == 'CLIENTE'">
         <button class="col1" mat-button [matMenuTriggerFor]="menuSubscripcion">
           <mat-icon>payment</mat-icon>Subscripcion
         </button>
@@ -75,7 +74,7 @@
         </mat-menu>
       </mat-list-item>
 
-      <mat-list-item>
+      <mat-list-item [hidden]="role == 'ABOGADO' || role == 'CLIENTE'">
         <button class="col1" mat-button [matMenuTriggerFor]="menuCategoria">
           <mat-icon> attach_file</mat-icon>Categoria
         </button>
@@ -93,7 +92,7 @@
         </mat-menu>
       </mat-list-item>
 
-      <mat-list-item *ngIf="role == 'ADMIN' || role == 'ABOGADO'">
+      <mat-list-item [hidden]="role == 'ABOGADO' || role == 'CLIENTE'">
         <button class="col1" mat-button [matMenuTriggerFor]="menuDistrito">
           <mat-icon>room</mat-icon>Distrito
         </button>
@@ -130,7 +129,7 @@
         </mat-menu>
       </mat-list-item>
 
-      <mat-list-item *ngIf="role == 'ADMIN' || role == 'ABOGADO'">
+      <mat-list-item [hidden]=" role == 'CLIENTE'">
         <button
           class="col1"
           mat-button
@@ -142,7 +141,7 @@
           <button
             mat-menu-item
             routerLink="components/documentations/nuevo"
-            *ngIf="role == 'ADMIN'"
+            *ngIf="role == 'ADMIN'|| role=='ABOGADO'"
           >
             Registrar
           </button>
@@ -152,7 +151,7 @@
         </mat-menu>
       </mat-list-item>
 
-      <mat-list-item>
+      <mat-list-item >
         <button class="col1" mat-button [matMenuTriggerFor]="menuExpediente">
           Expediente
         </button>
@@ -171,7 +170,7 @@
         </mat-menu>
       </mat-list-item>
 
-      <mat-list-item *ngIf="role == 'ADMIN' || role == 'ABOGADO'">
+      <mat-list-item [hidden]="role == 'ABOGADO' || role == 'CLIENTE'">
         <button class="col1" mat-button [matMenuTriggerFor]="menuJuzgados">
           <mat-icon>account_balance</mat-icon>Juzgados
         </button>
@@ -213,7 +212,7 @@
           <button
             mat-menu-item
             routerLink="components/notification/nuevo"
-            *ngIf="role == 'CLIENTE' || role == 'ADMIN'"
+            *ngIf="role == 'ADMIN'"
           >
             Registrar
           </button>
@@ -222,7 +221,7 @@
         </mat-menu>
       </mat-list-item>
 
-      <mat-list-item>
+      <mat-list-item [hidden]=" role == 'CLIENTE'">
         <button class="col1" mat-button [matMenuTriggerFor]="menuCertificacion">
           <mat-icon>card_membership</mat-icon>Certificacion
         </button>
@@ -243,7 +242,7 @@
     </mat-nav-list>
   </mat-drawer>
   <mat-drawer-content>
-    <div style="text-align: center; min-height: 600px">
+    <div style="text-align: center; min-height: 640px">
       <router-outlet></router-outlet>
     </div>
   </mat-drawer-content>
