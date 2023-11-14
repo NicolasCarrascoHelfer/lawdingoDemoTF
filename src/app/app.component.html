@@ -131,9 +131,9 @@
       </mat-list-item>
 
       <mat-list-item *ngIf="role == 'ADMIN' || role == 'ABOGADO'">
-        <button 
-          class="col1" 
-          mat-button 
+        <button
+          class="col1"
+          mat-button
           [matMenuTriggerFor]="menuDocumentacion"
         >
           <mat-icon>assignment</mat-icon>Documentación
@@ -207,7 +207,7 @@
 
       <mat-list-item>
         <button class="col1" mat-button [matMenuTriggerFor]="menuNofiticaciones">
-          Notificaciones
+          <mat-icon>notifications</mat-icon>Notificaciones
         </button>
         <mat-menu #menuNofiticaciones="matMenu">
           <button
@@ -224,7 +224,7 @@
 
       <mat-list-item>
         <button class="col1" mat-button [matMenuTriggerFor]="menuCertificacion">
-          Certificacion
+          <mat-icon>card_membership</mat-icon>Certificacion
         </button>
         <mat-menu #menuCertificacion="matMenu">
           <button
