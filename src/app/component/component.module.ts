@@ -56,6 +56,8 @@ import { LandingComponent } from './landing/landing.component';
 import { NotificationComponent } from './notification/notification.component';
 import { NotificationListarComponent } from './notification/notification-listar/notification-listar.component';
 import { NotificationCreaeditaComponent } from './notification/notification-creaedita/notification-creaedita.component';
+import { ProceedingSummaryComponent } from './proceeding/proceeding-summary/proceeding-summary.component';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -97,6 +99,7 @@ import { NotificationCreaeditaComponent } from './notification/notification-crea
     NotificationComponent,
     NotificationListarComponent,
     NotificationCreaeditaComponent,
+    ProceedingSummaryComponent,
   ],
   imports: [
     CommonModule,
@@ -117,7 +120,8 @@ import { NotificationCreaeditaComponent } from './notification/notification-crea
     MatFormFieldModule,
     MatListModule,
     MatSidenavModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    NgChartsModule
   ]
 })
 export class ComponentModule { }
